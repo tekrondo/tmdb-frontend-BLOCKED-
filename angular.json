@@ -25,7 +25,9 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "ng build --base-href ./"
+            ]
           },
           "configurations": {
             "production": {
