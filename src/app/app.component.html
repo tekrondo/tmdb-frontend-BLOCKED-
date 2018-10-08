@@ -7,7 +7,39 @@
 </div>
 <h2>Here are some links to help you start: </h2>
 
-<!-- {{ moviesPopular }} -->
+
+<input type="text" placeholder="What's the word?" [(ngModel)]="movieName">
+<button (click)="searchMovie(movieName)" class="btn btn-primary"> Find the Movie!</button>
+<div>
+    <ul *ngIf="moviesResultsState">
+    <li *ngFor="let movie of moviesResults.results" (click)="singleMovie(movie.id)">
+      <p><strong>Title:</strong> {{ movie.title | json }}</p>
+      <p><strong>Total Votes:</strong> {{ movie.vote_count | json }}</p>
+      <p><strong>Vote average:</strong> {{ movie.vote_average | json }}</p>
+      <p><strong>Movie Popularity:</strong> {{ movie.popularity | json }}</p>
+      <p><strong>Overview:</strong> {{ movie.overview | json }}</p>
+      <p><strong>Release date:</strong> {{ movie.release_date | json }}</p>
+    </li>
+  </ul>
+  <div *ngIf="movieState">
+      <p><strong>Title: </strong>{{ oneMovie.original_title | json }}</p>
+      <strong>Genre</strong><span *ngFor="let genre of oneMovie.genres">
+            {{ genre.name | json }} |
+      </span>
+      <p><strong>Overview: </strong>{{ oneMovie.overview | json }}</p>
+      <span><strong>Runtime: </strong>{{ oneMovie.runtime | json }} Minutes</span> | <span><strong>Release date: </strong>{{ oneMovie.release_date | json }}</span>
+      <p><strong>Budget: </strong>{{ oneMovie.budget | currency: 'USD' | json }}</p>
+      <p><strong>Revenue: </strong>{{ oneMovie.revenue | currency: 'USD' | json }}</p>
+      <p><strong>Tagline: </strong>{{ oneMovie.tagline | json }}</p>
+      <p><strong>Movie Popularity: </strong>{{ oneMovie.popularity | json }}</p>
+      <p><strong>Release date: </strong>{{ oneMovie.release_date | json }}</p>
+      <strong>Production companies</strong><span *ngFor="let company of oneMovie.production_companies">
+        {{ company.name | json }} |
+      </span>
+      <p><strong></strong></p>
+  </div>
+  
+</div>
 <ul>
   <li>
     <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>

@@ -13,4 +13,12 @@ export class MoviesService {
   getPopular(){
     return this.http.get(`${this.url}/movies/popular`);
   }
+
+  findMovie(movieName: string){
+    return this.http.get(`${this.url}/movies/search/`+ movieName);
+  }
+
+  getOneMovie(movieId){
+    return this.http.get(`${this.url}/movies/movie/` + movieId)
+  }
 }
