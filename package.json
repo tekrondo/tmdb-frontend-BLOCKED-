@@ -1,11 +1,16 @@
 {
   "name": "tmdb-frontend",
   "version": "0.0.0",
+  "engines": {
+    "node": "10.11.0",
+    "npm": "6.4.1"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "postinstall": "ng build --aot --prod",
     "build": "ng build",
+    "postinstall": "ng build --prod",
+    "preinstall": "npm install -g @angular/cli @angular/compiler-cli typescript",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -22,12 +27,10 @@
     "@angular/platform-browser-dynamic": "~7.0.0-rc.0",
     "@angular/router": "~7.0.0-rc.0",
     "core-js": "^2.5.4",
-    "rxjs": "~6.3.3",
-    "zone.js": "~0.8.26",
-
-    "body-parser": "^1.18.3",
     "express": "^4.16.3",
-    "needle": "^2.2.4",
+    "path": "^0.12.7",
+    "rxjs": "~6.3.3",
+    "zone.js": "~0.8.26"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.9.0-rc.1",
