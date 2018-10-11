@@ -1,24 +1,33 @@
 import { Injectable } from '@angular/core';
 
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MoviesService {
-  url = 'https://tmdb-api-ang.herokuapp.com';
+  url = /*'http://localhost:5555';*/ 'https://tmdb-api-ang.herokuapp.com';
 
   constructor(private http: HttpClient) { }
 
-  getPopular(){
-    return this.http.get(`${this.url}/movies/popular`);
+  // Get popular movies on TMDB
+  getPopular(): Observable<any>{
+    return this.http.get<any>(`${this.url}/movies/popular`);
   }
 
-  findMovie(movieName: string){
-    return this.http.get(`${this.url}/movies/search/`+ movieName);
+  // Search for movies based on search term
+  findMovie(movieName: string): Observable<any> {
+    return this.http.get<any>(`${this.url}/movies/search/`+ movieName);
   }
 
-  getOneMovie(movieId){
-    return this.http.get(`${this.url}/movies/movie/` + movieId)
+  // Get full details of one movie
+  getOneMovie(movieId): Observable<any>{
+    return this.http.get<any>(`${this.url}/movies/movie/` + movieId)
+  }
+
+  // Get similar movies based on the id of another movie.
+  getSimilar(movieId): Observable<any> {
+    return this.http.get<any>(`${this.url}/movies/movie/similar/` + movieId)
   }
 }

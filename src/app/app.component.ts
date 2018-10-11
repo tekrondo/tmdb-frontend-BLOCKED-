@@ -10,7 +10,8 @@ import { MoviesService } from './movies.service';
 export class AppComponent implements OnInit{
   title = 'tmdb-frontend';
   constructor(private moviesService: MoviesService) {}
-  
+  movieName: string;
+  similarMovieResults = {};
   moviesResults = {};
   moviesResultsState = false;
   movieState = false;
@@ -22,7 +23,7 @@ export class AppComponent implements OnInit{
     this.moviesService.getPopular()
     .subscribe((movies) => {
       this.moviesResults = movies;
-      console.log(movies);
+      console.log(movies.results);
     });
   }
 
@@ -46,8 +47,13 @@ export class AppComponent implements OnInit{
     .subscribe((movie) => {
       this.moviesResults = {};
       this.oneMovie = movie;
-      console.log(movie);
-    })
+      // console.log(movie);
+    });
+    this.moviesService.getSimilar(movieID)
+    .subscribe((movies) => {
+      this.similarMovieResults = movies
+      console.log(movies, "Similar movies");
+    });
   }
 
   ngOnInit() {
