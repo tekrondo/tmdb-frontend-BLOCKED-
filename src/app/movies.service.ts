@@ -7,8 +7,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class MoviesService {
-  // url = 'http://localhost:5555'; // 
-  url = 'https://tmdb-api-ang.herokuapp.com';
+  url = 'http://localhost:5555'; // 
+  // url = 'https://tmdb-api-ang.herokuapp.com';
 
   constructor(private http: HttpClient) { }
 

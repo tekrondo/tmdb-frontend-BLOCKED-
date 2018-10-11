@@ -1,18 +1,66 @@
 <input type="text" placeholder="What's the word?" [(ngModel)]="movieName">
 <button (click)="searchMovie(movieName)" class="btn btn-primary"> Find the Movie!</button>
 <div>
-    <ul *ngIf="moviesResultsState">
-    <li *ngFor="let movie of moviesResults.results" (click)="singleMovie(movie.id)">
-      <p><strong>Title:</strong> {{ movie.title }}</p>
-      <p><strong>Total Votes:</strong> {{ movie.vote_count }}</p>
-      <p><strong>Vote average:</strong> {{ movie.vote_average }}</p>
-      <p><strong>Movie Popularity:</strong> {{ movie.popularity }}</p>
-      <p><strong>Overview:</strong> {{ movie.overview }}</p>
-      <p><strong>Release date:</strong> {{ movie.release_date }}</p>
-    </li>
-  </ul>
-  <div *ngIf="movieState">
-      <p><strong>Title: </strong>{{ oneMovie.original_title }}</p>
+
+    <!-- <mat-grid-list *ngIf="moviesResultsState" cols="4" rowHeight="2:1" class="card">
+      <mat-grid-tile
+        *ngFor="let movie of moviesResults.results"
+        (click)="singleMovie(movie.id)">
+        Title: {{ movie.title }}
+        <strong>Total Votes:</strong> {{ movie.vote_count }}
+        <strong>Vote average:</strong> {{ movie.vote_average }}
+        <strong>Movie Popularity:</strong> {{ movie.popularity }} 
+        <strong>Overview:</strong> {{ movie.overview }} 
+        <strong>Release date:</strong> {{ movie.release_date }} 
+      </mat-grid-tile>
+    </mat-grid-list> -->
+
+    <mat-grid-list
+    *ngIf="moviesResultsState"
+    cols="4"
+    rowHeight="2:1"
+    class="card">
+      <mat-card
+      *ngFor="let movie of moviesResults.results"
+      (click)="singleMovie(movie.id)">
+          <mat-card-title>
+              Title: {{ movie.title }}
+          </mat-card-title>
+          <mat-card-subtitle>
+            <strong>Total Votes:</strong> {{ movie.vote_count }}
+            <strong>Vote average:</strong> {{ movie.vote_average }}
+            <strong>Movie Popularity:</strong> {{ movie.popularity }} 
+          </mat-card-subtitle>
+          <mat-card-content>
+            <strong>Overview:</strong> {{ movie.overview }}
+          </mat-card-content>
+          <mat-card-footer>
+              <strong>Release date:</strong> {{ movie.release_date }} 
+          </mat-card-footer>
+      </mat-card>
+    </mat-grid-list>
+
+    <mat-grid-list *ngIf="movieState" cols="4" rowHeight="240px">
+        <mat-grid-tile>
+          <p><strong>Title:</strong>{{ oneMovie.original_title }}</p>
+          <strong>Genre</strong><span *ngFor="let genre of oneMovie.genres">
+                {{ genre.name }} |
+          </span>
+          <p><strong>Overview: </strong>{{ oneMovie.overview }}</p>
+          <span><strong>Runtime: </strong>{{ oneMovie.runtime }} Minutes</span> | <span><strong>Release date: </strong>{{ oneMovie.release_date | json }}</span>
+          <p><strong>Budget: </strong>{{ oneMovie.budget | currency: 'USD' }}</p>
+          <p><strong>Revenue: </strong>{{ oneMovie.revenue | currency: 'USD' }}</p>
+          <p><strong>Tagline: </strong>{{ oneMovie.tagline }}</p>
+          <p><strong>Movie Popularity: </strong>{{ oneMovie.popularity }}</p>
+          <p><strong>Release date: </strong>{{ oneMovie.release_date }}</p>
+          <strong>Production companies</strong><span *ngFor="let company of oneMovie.production_companies">
+            {{ company.name }} |
+          </span>
+        </mat-grid-tile>
+      </mat-grid-list>
+
+  <!-- <div *ngIf="movieState">
+      <p>Title:{{ oneMovie.original_title }}</p>
       <strong>Genre</strong><span *ngFor="let genre of oneMovie.genres">
             {{ genre.name }} |
       </span>
@@ -26,14 +74,9 @@
       <strong>Production companies</strong><span *ngFor="let company of oneMovie.production_companies">
         {{ company.name }} |
       </span>
-      <p><strong></strong></p>
-  </div>
+  </div> -->
 
-
-
-  ********************************************************************************************************************************************
-
-  
+<!--   
   <div *ngFor="let movie of similarMovieResults.results" (click)="singleMovie(movie.id)">
     <div>
       <p><strong>Title:</strong> {{ movie.title }}</p>
@@ -43,7 +86,7 @@
       <p><strong>Overview:</strong> {{ movie.overview }}</p>
       <p><strong>Release date:</strong> {{ movie.release_date }}</p>
     </div>
-  </div>
+  </div> -->
   
 </div>
 <ul>
