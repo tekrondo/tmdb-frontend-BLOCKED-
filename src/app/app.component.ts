@@ -11,7 +11,10 @@ export class AppComponent implements OnInit{
   title = 'tmdb-frontend';
   constructor(private moviesService: MoviesService) {}
   movieName: string;
-  similarMovieResults = {};
+  similarMovieResults = {
+    "results": {}
+  };
+  // similar = this.similarMovieResults.results;
   moviesResults = {};
   moviesResultsState = false;
   movieState = false;
@@ -51,8 +54,8 @@ export class AppComponent implements OnInit{
     });
     this.moviesService.getSimilar(movieID)
     .subscribe((movies) => {
-      this.similarMovieResults = movies
-      console.log(movies, "Similar movies");
+      this.similarMovieResults.results = movies.results
+      console.log(this.similarMovieResults, "Similar movies");
     });
   }
 
