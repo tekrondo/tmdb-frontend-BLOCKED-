@@ -14,7 +14,7 @@ export class AppComponent implements OnInit{
   moviePage: number;
   total_pages: number;
   newPage: number;
-  similarMovieResults = {
+  similarMovieResults = <any>{
     "results": {}
   };
   // similar = this.similarMovieResults.results;
