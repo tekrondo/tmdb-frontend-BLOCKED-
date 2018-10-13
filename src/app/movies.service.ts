@@ -13,8 +13,18 @@ export class MoviesService {
   constructor(private http: HttpClient) { }
 
   // Get popular movies on TMDB
-  getPopular(): Observable<any>{
-    return this.http.get<any>(`${this.url}/movies/popular`);
+  // getPopular(): Observable<any>{
+  //   return this.http.get<any>(`${this.url}/movies/popular`);
+  // }
+
+  getPopular(req: number): Observable<any>{
+    console.log(req, "from service");
+    let backendString = `${this.url}/movies/popular`;
+    if(!req){
+      return this.http.get<any>(backendString);
+    }else{
+      return this.http.get<any>(backendString + '?page=' + req)
+    }
   }
 
   // Search for movies based on search term

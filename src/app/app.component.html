@@ -2,12 +2,17 @@
 <button (click)="searchMovie(movieName)" class="btn btn-primary"> Find the Movie!</button>
 <div>
   
+  <input [(ngModel)]="page" type="number">
+  {{ moviesResults.page }}
+  <button (click)=more(page) class="btn btn-success">More! </button>
+  {{ moviesResults.total_pages }}
     <div *ngIf="moviesResultsState"
-        class="row">
+        class="row fixedWidth">
         <div 
           *ngFor="let movie of moviesResults.results" 
           (click)="singleMovie(movie.id)"
           class="col-3">
+          <img src='http://image.tmdb.org/t/p/w154/{{ movie.poster_path }}'/>
           <p><strong>Title:</strong> {{ movie.title }}</p>
           <p><strong>Total Votes:</strong> {{ movie.vote_count }}</p>
           <p><strong>Vote average:</strong> {{ movie.vote_average }}</p>
@@ -22,7 +27,8 @@
     class="row">
       <div 
       *ngIf="movieState"
-      class="col-3">
+      class="col-3" >
+        <img src='http://image.tmdb.org/t/p/w154/{{ oneMovie.backdrop_path }}'/>
         <p><strong>Title: </strong>{{ oneMovie.original_title }}</p>
         <strong>Genre</strong><span *ngFor="let genre of oneMovie.genres">
               {{ genre.name }} |
@@ -41,7 +47,7 @@
   </div>
 
 
-  <div class=" row dongie">
+  <!-- <div class=" row dongie">
     <div *ngFor="let movie of similarMovieResults.results" (click)="singleMovie(movie.id)">
       <div>
         <p><strong>Title:</strong> {{ movie.title }}</p>
@@ -52,7 +58,7 @@
         <p><strong>Release date:</strong> {{ movie.release_date }}</p>
       </div>
     </div>
-  </div>
+  </div> -->
   
 
   

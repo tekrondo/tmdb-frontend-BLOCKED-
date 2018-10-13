@@ -11,6 +11,7 @@ export class AppComponent implements OnInit{
   title = 'tmdb-frontend';
   constructor(private moviesService: MoviesService) {}
   movieName: string;
+  newPage: number;
   similarMovieResults = {
     "results": {}
   };
@@ -23,10 +24,11 @@ export class AppComponent implements OnInit{
   getPopularMovies() {
     this.moviesResultsState = true
     this.moviesResults = {};
-    this.moviesService.getPopular()
+    this.moviesService.getPopular(1)
     .subscribe((movies) => {
+      // this.newPage = movies.page
       this.moviesResults = movies;
-      console.log(movies.results);
+      console.log(movies);
     });
   }
 
@@ -42,6 +44,15 @@ export class AppComponent implements OnInit{
     // this.movieName = '';
   }
 
+  more(page: number){
+    console.log(page)
+    // this.moviesService.getPopular()
+    this.moviesService.getPopular(page)
+    .subscribe((movies) =>{
+      this.moviesResults = movies;
+      console.log(movies, "Moveis on page " + page);
+    });
+  }
   singleMovie(movieID) {
     this.moviesResults = {};
     this.moviesResultsState = false
@@ -50,7 +61,7 @@ export class AppComponent implements OnInit{
     .subscribe((movie) => {
       this.moviesResults = {};
       this.oneMovie = movie;
-      // console.log(movie);
+      console.log(movie);
     });
     this.moviesService.getSimilar(movieID)
     .subscribe((movies) => {
