@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 bootstrap
 MIT
 The MIT License (MIT)
@@ -24,6 +25,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
+=======
+>>>>>>> 22039de03fd280726f1bcac932d5bf47eeaf8251
 tslib
 Apache-2.0
 Apache License
@@ -307,6 +310,7 @@ MIT
 @angular/forms
 MIT
 
+<<<<<<< HEAD
 @ng-bootstrap/ng-bootstrap
 MIT
 The MIT License (MIT)
@@ -332,6 +336,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
+=======
+>>>>>>> 22039de03fd280726f1bcac932d5bf47eeaf8251
 zone.js
 MIT
 The MIT License
