@@ -11,15 +11,17 @@ export class AppComponent implements OnInit{
   title = 'tmdb-frontend';
   constructor(private moviesService: MoviesService) {}
   movieName: string;
+  moviePage: number;
+  total_pages: number;
   newPage: number;
   similarMovieResults = {
     "results": {}
   };
   // similar = this.similarMovieResults.results;
-  moviesResults = {};
+  moviesResults = <any>{};
   moviesResultsState = false;
   movieState = false;
-  oneMovie = {};
+  oneMovie = <any>{};
 
   getPopularMovies() {
     this.moviesResultsState = true
@@ -44,13 +46,13 @@ export class AppComponent implements OnInit{
     // this.movieName = '';
   }
 
-  more(page: number){
-    console.log(page)
+  more(moviePage: number){
+    console.log(moviePage)
     // this.moviesService.getPopular()
-    this.moviesService.getPopular(page)
+    this.moviesService.getPopular(moviePage)
     .subscribe((movies) =>{
       this.moviesResults = movies;
-      console.log(movies, "Moveis on page " + page);
+      console.log(movies, "Moveis on page " + moviePage);
     });
   }
   singleMovie(movieID) {

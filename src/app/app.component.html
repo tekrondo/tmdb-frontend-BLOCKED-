@@ -2,9 +2,9 @@
 <button (click)="searchMovie(movieName)" class="btn btn-primary"> Find the Movie!</button>
 <div>
   
-  <input [(ngModel)]="page" type="number">
+  <input [(ngModel)]="moviePage" type="number">
   {{ moviesResults.page }}
-  <button (click)=more(page) class="btn btn-success">More! </button>
+  <button (click)=more(moviePage) class="btn btn-success">More! </button>
   {{ moviesResults.total_pages }}
     <div *ngIf="moviesResultsState"
         class="row fixedWidth">
