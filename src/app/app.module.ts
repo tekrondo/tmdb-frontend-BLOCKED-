@@ -7,6 +7,7 @@ import { MoviesService } from './movies.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import {RouterModule, Routes} from '@angular/router';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 

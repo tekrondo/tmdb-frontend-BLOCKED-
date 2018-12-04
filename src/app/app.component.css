@@ -6,3 +6,37 @@
 .x-ng-cloak {
   display: none !important;
 }
+
+.blog{
+  margin: 4em 0;
+  position: relative; 
+ }
+ .blog h1{
+  color:#F97300;
+  margin: 2em; 
+ }
+ .blog .card{
+  box-shadow: 0 0 20px #ccc;
+ }
+ .blog .card img{
+  width: 100%;
+  height: 100%;
+ }
+ .blog .card-title{
+  color:#F97300;
+   
+ }
+ .blog .card-body{
+  padding: 1em;
+ }
+ .card{
+  margin-bottom: 8%;
+ }
+
+ p .card-text{
+  overflow: hidden;
+ }
+
+ .imgHeight{
+   height: 540px !important;
+ }

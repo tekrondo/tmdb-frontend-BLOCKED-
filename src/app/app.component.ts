@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MoviesService } from './movies.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -9,14 +10,17 @@ import { MoviesService } from './movies.service';
 
 export class AppComponent implements OnInit{
   title = 'tmdb-frontend';
-  constructor(private moviesService: MoviesService) {}
+  constructor(private moviesService: MoviesService, private location: Location) {}
   movieName: string;
   moviePage: number;
   total_pages: number;
   newPage: number;
-  similarMovieResults = <any>{
-    "results": {}
-  };
+  similarMovieResults = <any>[];
+  // goBack(e) {
+  //   event.preventDefault();
+  //   this.location.back();
+  //   console.log("Went back One page");
+  // }
   // similar = this.similarMovieResults.results;
   moviesResults = <any>{};
   moviesResultsState = false;
@@ -35,6 +39,7 @@ export class AppComponent implements OnInit{
   }
 
   searchMovie(x:string) {
+    console.log(x, "THIS IS THE MOVIE")
     this.moviesResults = {};
     this.moviesResultsState = true
     this.movieState = false;
@@ -46,16 +51,20 @@ export class AppComponent implements OnInit{
     // this.movieName = '';
   }
 
-  more(moviePage: number){
-    console.log(moviePage)
-    // this.moviesService.getPopular()
-    this.moviesService.getPopular(moviePage)
-    .subscribe((movies) =>{
-      this.moviesResults = movies;
-      console.log(movies, "Moveis on page " + moviePage);
-    });
-  }
+  // more(moviePage: number){
+  //   console.log(moviePage)
+  //   // this.moviesService.getPopular()
+  //   this.moviesService.getPopular(moviePage)
+  //   .subscribe((movies) =>{
+  //     this.moviesResults = movies;
+  //     console.log(movies, "Moveis on page " + moviePage);
+  //   });
+  // }
+  // onActivate(e, scrollContainer) {
+  //   scrollContainer .scrollable._elementRef.nativeElement.scrollTop = 0
+  // }
   singleMovie(movieID) {
+    
     this.moviesResults = {};
     this.moviesResultsState = false
     this.movieState = true;
@@ -67,8 +76,8 @@ export class AppComponent implements OnInit{
     });
     this.moviesService.getSimilar(movieID)
     .subscribe((movies) => {
-      this.similarMovieResults.results = movies.results
-      console.log(this.similarMovieResults, "Similar movies");
+      this.similarMovieResults = movies
+      console.log(movies, "Similar movies");
     });
   }
 

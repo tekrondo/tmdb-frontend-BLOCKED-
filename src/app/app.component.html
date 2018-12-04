@@ -1,67 +1,103 @@
-<input type="text" placeholder="What's the word?" [(ngModel)]="movieName">
-<button (click)="searchMovie(movieName)" class="btn btn-primary"> Find the Movie!</button>
-<div>
-  
-  <input [(ngModel)]="moviePage" type="number">
+<div class="container">
+<div class="d-flex justify-content-center fixed-top navbar-brand " style="margin-top: 2.5px">
+      <input type="text" placeholder="What's the word?" [(ngModel)]="movieName">
+      <button (click)="searchMovie(movieName)" class="btn btn-primary"> Find the Movie!</button>
+  </div>
+
+  <!-- <input [(ngModel)]="moviePage" type="number">
   {{ moviesResults.page }}
   <button (click)=more(moviePage) class="btn btn-success">More! </button>
-  {{ moviesResults.total_pages }}
-    <div *ngIf="moviesResultsState"
-        class="row fixedWidth">
+  {{ moviesResults.total_pages }} -->
+<div class="blog">
+  <div class="container">
+    <div *ngIf="moviesResultsState" class="row">
+      <div *ngFor="let movie of moviesResults.results" 
+      (click)="singleMovie(movie.id)"
+      class="col-md-6 col-lg-4 col-sm-12">
+        <div class="card">
+         <div class="card-img">
+          <img src="http://image.tmdb.org/t/p/w300/{{ movie.poster_path }}" class="img-fluid">
+         </div>
+         <div class="card-body">
+            <h4 class="card-title">{{ movie.title }}</h4>
+          <p class="card-text d-inline-block text-truncate" style="max-width: 320px;">
+            {{ movie.overview }}
+          </p>
+         </div>
+         <div class="card-footer">
+          <p class="card-text">{{ movie.release_date }}</p>
+         </div>
+        </div>
+       </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+    <!-- <div *ngIf="moviesResultsState"
+        class="row marginTinz">
         <div 
           *ngFor="let movie of moviesResults.results" 
           (click)="singleMovie(movie.id)"
-          class="col-3">
-          <img src='http://image.tmdb.org/t/p/w154/{{ movie.poster_path }}'/>
-          <p><strong>Title:</strong> {{ movie.title }}</p>
-          <p><strong>Total Votes:</strong> {{ movie.vote_count }}</p>
-          <p><strong>Vote average:</strong> {{ movie.vote_average }}</p>
-          <p><strong>Movie Popularity:</strong> {{ movie.popularity }}</p>
-          <p><strong>Overview:</strong> {{ movie.overview }}</p>
-          <p><strong>Release date:</strong> {{ movie.release_date }}</p>
+          class="col-lg-3 col-md-4 col-sm-6">
+          <img class="imgClass" src='http://image.tmdb.org/t/p/w300/{{ movie.poster_path }}'/>
+          <div class="fixed_Height">          
+            <p><strong>Title:</strong> {{ movie.title }}</p>
+            <p><strong>Total Votes:</strong> {{ movie.vote_count }}</p>
+            <p><strong>Vote average:</strong> {{ movie.vote_average }}</p>
+            <p><strong>Movie Popularity:</strong> {{ movie.popularity }}</p>
+            <p><strong>Overview:</strong> {{ movie.overview }}</p>
+            <p><strong>Release date:</strong> {{ movie.release_date }}</p>
+          </div>
+
+        </div>
+      </div> -->
+  
+  <div class="container marginTinz" #scrollContainer>
+    <!-- <div>
+        <button class="btn btn-primary float-right" (click)="goBack($event)">Back</button>
+    </div> -->
+      <div *ngIf="movieState" class="row justify-content">
+        <div class="col" >
+            <img src='http://image.tmdb.org/t/p/w780/{{ oneMovie.backdrop_path }}'/>
+        </div>
+        <div class="col-md-2">
+          <p><strong>Title: </strong>{{ oneMovie.original_title }}</p>
+          <strong>Genre</strong><span *ngFor="let genre of oneMovie.genres">
+                  {{ genre.name }} |
+          </span>
+          <p><strong>Overview: </strong>{{ oneMovie.overview }}</p>
+          <span><strong>Runtime: </strong>{{ oneMovie.runtime }} Minutes</span> | <span><strong>Release date: </strong>{{ oneMovie.release_date | json }}</span>
+          <p><strong>Budget: </strong>{{ oneMovie.budget | currency: 'USD' }}</p>
+          <p><strong>Revenue: </strong>{{ oneMovie.revenue | currency: 'USD' }}</p>
+          <p><strong>Tagline: </strong>{{ oneMovie.tagline }}</p>
+          <p><strong>Movie Popularity: </strong>{{ oneMovie.popularity }}</p>
+          <p><strong>Release date: </strong>{{ oneMovie.release_date }}</p>
+          <strong>Production companies</strong><span *ngFor="let company of oneMovie.production_companies">
+              {{ company.name }} |
+          </span>
         </div>
       </div>
-  
-   
-  <div
-    class="row">
-      <div 
-      *ngIf="movieState"
-      class="col-3" >
-        <img src='http://image.tmdb.org/t/p/w154/{{ oneMovie.backdrop_path }}'/>
-        <p><strong>Title: </strong>{{ oneMovie.original_title }}</p>
-        <strong>Genre</strong><span *ngFor="let genre of oneMovie.genres">
-              {{ genre.name }} |
-        </span>
-        <p><strong>Overview: </strong>{{ oneMovie.overview }}</p>
-        <span><strong>Runtime: </strong>{{ oneMovie.runtime }} Minutes</span> | <span><strong>Release date: </strong>{{ oneMovie.release_date | json }}</span>
-        <p><strong>Budget: </strong>{{ oneMovie.budget | currency: 'USD' }}</p>
-        <p><strong>Revenue: </strong>{{ oneMovie.revenue | currency: 'USD' }}</p>
-        <p><strong>Tagline: </strong>{{ oneMovie.tagline }}</p>
-        <p><strong>Movie Popularity: </strong>{{ oneMovie.popularity }}</p>
-        <p><strong>Release date: </strong>{{ oneMovie.release_date }}</p>
-        <strong>Production companies</strong><span *ngFor="let company of oneMovie.production_companies">
-          {{ company.name }} |
-        </span>
-    </div>
   </div>
 
-
-  <div class=" row dongie">
-    <div *ngFor="let movie of similarMovieResults.results" (click)="singleMovie(movie.id)">
-      <div>
-        <p><strong>Title:</strong> {{ movie.title }}</p>
-        <p><strong>Total Votes:</strong> {{ movie.vote_count }}</p>
-        <p><strong>Vote average:</strong> {{ movie.vote_average }}</p>
-        <p><strong>Movie Popularity:</strong> {{ movie.popularity }}</p>
-        <p><strong>Overview:</strong> {{ movie.overview }}</p>
-        <p><strong>Release date:</strong> {{ movie.release_date }}</p>
-      </div>
-    </div>
-  </div>
   
 
-  
 </div>
-<ul>
-<router-outlet></router-outlet>
+  <div 
+  *ngIf="movieState" class="row">
+        <div *ngFor="let movie of similarMovieResults.results" (click)="singleMovie(movie.id)"
+        class="col-lg-3 col-md-4 col-sm-6">
+          <img src='http://image.tmdb.org/t/p/w300/{{ movie.poster_path }}'/>
+          <div>
+            <p *ngIf="movie.title"><strong>Title:</strong> {{ movie.title }}</p>
+            <p *ngIf="movie.vote_count"><strong>Total Votes:</strong> {{ movie.vote_count }}</p>
+            <p *ngIf="movie.vote_average"><strong>Vote average:</strong> {{ movie.vote_average }}</p>
+            <p *ngIf="movie.popularity"><strong>Movie Popularity:</strong> {{ movie.popularity }}</p>
+            <p *ngIf="movie.overview"><strong>Overview:</strong> {{ movie.overview }}</p>
+            <p *ngIf="movie.release_date"><strong>Release date:</strong> {{ movie.release_date }}</p>
+          </div>
+      </div>
+  </div>
