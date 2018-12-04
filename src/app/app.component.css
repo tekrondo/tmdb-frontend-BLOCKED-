@@ -24,7 +24,10 @@
  }
  .blog .card-title{
   color:#F97300;
-   
+ }
+
+.card-title:hover{
+  cursor: pointer;
  }
  .blog .card-body{
   padding: 1em;
@@ -37,6 +40,19 @@
   overflow: hidden;
  }
 
- .imgHeight{
+ /* .imgHeight{
    height: 540px !important;
+ } */
+
+ h4.card-title{
+   font-weight: 300 !important;
  }
+
+ .card-img:hover{
+   border: 2px;
+   border-color: #F97300;
+   cursor: pointer;
+ }
+
+
+ 

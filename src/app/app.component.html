@@ -13,10 +13,10 @@
     <div *ngIf="moviesResultsState" class="row">
       <div *ngFor="let movie of moviesResults.results" 
       (click)="singleMovie(movie.id)"
-      class="col-md-6 col-lg-4 col-sm-12">
+      class="col-lg-4 col-md-6 col-sm-12">
         <div class="card">
          <div class="card-img">
-          <img src="http://image.tmdb.org/t/p/w300/{{ movie.poster_path }}" class="img-fluid">
+          <img src="https://image.tmdb.org/t/p/w300/{{ movie.poster_path }}" class="img-fluid">
          </div>
          <div class="card-body">
             <h4 class="card-title">{{ movie.title }}</h4>
@@ -43,7 +43,7 @@
           *ngFor="let movie of moviesResults.results" 
           (click)="singleMovie(movie.id)"
           class="col-lg-3 col-md-4 col-sm-6">
-          <img class="imgClass" src='http://image.tmdb.org/t/p/w300/{{ movie.poster_path }}'/>
+          <img class="imgClass" src='https://image.tmdb.org/t/p/w300/{{ movie.poster_path }}'/>
           <div class="fixed_Height">          
             <p><strong>Title:</strong> {{ movie.title }}</p>
             <p><strong>Total Votes:</strong> {{ movie.vote_count }}</p>
@@ -61,10 +61,10 @@
         <button class="btn btn-primary float-right" (click)="goBack($event)">Back</button>
     </div> -->
       <div *ngIf="movieState" class="row justify-content">
-        <div class="col" >
-            <img src='http://image.tmdb.org/t/p/w780/{{ oneMovie.backdrop_path }}'/>
+        <div class="col-md-6 col-sm-12" >
+            <img class="img-fluid" src='https://image.tmdb.org/t/p/w780/{{ oneMovie.backdrop_path }}'/>
         </div>
-        <div class="col-md-2">
+        <div class="col-md-6 col-sm-12 desc">
           <p><strong>Title: </strong>{{ oneMovie.original_title }}</p>
           <strong>Genre</strong><span *ngFor="let genre of oneMovie.genres">
                   {{ genre.name }} |
@@ -83,10 +83,35 @@
       </div>
   </div>
 
+
+  <!-- <section class="about">
+    <div class="row ">
+      <div class="col-lg-4 col-md-4 col-sm-12">
+        <img src="../assets/images/octocat.png" class="img-fluid">
+        <span class="text-justify">S.Web Developer</span>
+      </div>
+      
+      <div class="col-lg-8 col-md-8 col-sm-12 desc">
+          <h1>About Me</h1>
+        <h3>D.John</h3>
+        <p>
+            ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      </div>
+    </div>
+  </section> -->
+
+
+
   
 
 </div>
-  <div 
+  <!-- <div 
   *ngIf="movieState" class="row">
         <div *ngFor="let movie of similarMovieResults.results" (click)="singleMovie(movie.id)"
         class="col-lg-3 col-md-4 col-sm-6">
@@ -100,4 +125,57 @@
             <p *ngIf="movie.release_date"><strong>Release date:</strong> {{ movie.release_date }}</p>
           </div>
       </div>
+  </div> -->
+
+
+
+  <div class="blog">
+    <div class="container">
+      <div *ngIf="movieState" class="row">
+        <div *ngFor="let movie of similarMovieResults.results" (click)="singleMovie(movie.id)"
+        class="col-lg-3 col-md-4 col-sm-12">
+          <div class="card">
+           <div class="card-img">
+            <img src="https://image.tmdb.org/t/p/w300/{{ movie.poster_path }}" class="img-fluid">
+           </div>
+           <div class="card-body">
+              <h4 class="card-title">{{ movie.title }}</h4>
+            <p class="card-text d-inline-block text-truncate" style="max-width: 200px;">
+              {{ movie.overview }}
+            </p>
+           </div>
+           <div class="card-footer">
+            <p class="card-text">{{ movie.release_date }}</p>
+            <i style='content:"\e005";'></i>
+           </div>
+          </div>
+         </div>
+      </div>
+    </div>
   </div>
+
+
+
+<nav aria-label="Page navigation example">
+  <ul class="pagination pagination-circle pg-blue">
+    <li class="page-item disabled"><a class="page-link" mdbWavesEffect>First</a></li>
+    <li class="page-item disabled">
+      <a class="page-link" aria-label="Previous" mdbWavesEffect>
+        <span aria-hidden="true">&laquo;</span>
+        <span class="sr-only">Previous</span>
+      </a>
+    </li>
+    <li class="page-item active"><a class="page-link" mdbWavesEffect>1</a></li>
+    <li class="page-item"><a class="page-link" mdbWavesEffect>2</a></li>
+    <li class="page-item"><a class="page-link" mdbWavesEffect>3</a></li>
+    <li class="page-item"><a class="page-link" mdbWavesEffect>4</a></li>
+    <li class="page-item"><a class="page-link" mdbWavesEffect>5</a></li>
+    <li class="page-item">
+      <a class="page-link" aria-label="Next" mdbWavesEffect>
+        <span aria-hidden="true">&raquo;</span>
+        <span class="sr-only">Next</span>
+      </a>
+    </li>
+    <li class="page-item"><a class="page-link" mdbWavesEffect>Last</a></li>
+  </ul>
+</nav>
