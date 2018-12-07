@@ -1,13 +1,11 @@
+
 <div class="container">
 <div class="d-flex justify-content-center fixed-top navbar-brand " style="margin-top: 2.5px">
       <input type="text" placeholder="What's the word?" [(ngModel)]="movieName">
       <button (click)="searchMovie(movieName)" class="btn btn-primary"> Find the Movie!</button>
   </div>
 
-  <!-- <input [(ngModel)]="moviePage" type="number">
-  {{ moviesResults.page }}
-  <button (click)=more(moviePage) class="btn btn-success">More! </button>
-  {{ moviesResults.total_pages }} -->
+ 
 <div class="blog">
   <div class="container">
     <div *ngIf="moviesResultsState" class="row">
@@ -34,28 +32,15 @@
 </div>
 
 
+</div>
+
+<!-- <video *ngIf="movieState" autoplay muted loop id="myVideo">
+  <source src="rain.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video> -->
 
 
 
-    <!-- <div *ngIf="moviesResultsState"
-        class="row marginTinz">
-        <div 
-          *ngFor="let movie of moviesResults.results" 
-          (click)="singleMovie(movie.id)"
-          class="col-lg-3 col-md-4 col-sm-6">
-          <img class="imgClass" src='https://image.tmdb.org/t/p/w300/{{ movie.poster_path }}'/>
-          <div class="fixed_Height">          
-            <p><strong>Title:</strong> {{ movie.title }}</p>
-            <p><strong>Total Votes:</strong> {{ movie.vote_count }}</p>
-            <p><strong>Vote average:</strong> {{ movie.vote_average }}</p>
-            <p><strong>Movie Popularity:</strong> {{ movie.popularity }}</p>
-            <p><strong>Overview:</strong> {{ movie.overview }}</p>
-            <p><strong>Release date:</strong> {{ movie.release_date }}</p>
-          </div>
-
-        </div>
-      </div> -->
-  
   <div class="container marginTinz" #scrollContainer>
     <!-- <div>
         <button class="btn btn-primary float-right" (click)="goBack($event)">Back</button>
@@ -84,50 +69,6 @@
   </div>
 
 
-  <!-- <section class="about">
-    <div class="row ">
-      <div class="col-lg-4 col-md-4 col-sm-12">
-        <img src="../assets/images/octocat.png" class="img-fluid">
-        <span class="text-justify">S.Web Developer</span>
-      </div>
-      
-      <div class="col-lg-8 col-md-8 col-sm-12 desc">
-          <h1>About Me</h1>
-        <h3>D.John</h3>
-        <p>
-            ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-      </div>
-    </div>
-  </section> -->
-
-
-
-  
-
-</div>
-  <!-- <div 
-  *ngIf="movieState" class="row">
-        <div *ngFor="let movie of similarMovieResults.results" (click)="singleMovie(movie.id)"
-        class="col-lg-3 col-md-4 col-sm-6">
-          <img src='http://image.tmdb.org/t/p/w300/{{ movie.poster_path }}'/>
-          <div>
-            <p *ngIf="movie.title"><strong>Title:</strong> {{ movie.title }}</p>
-            <p *ngIf="movie.vote_count"><strong>Total Votes:</strong> {{ movie.vote_count }}</p>
-            <p *ngIf="movie.vote_average"><strong>Vote average:</strong> {{ movie.vote_average }}</p>
-            <p *ngIf="movie.popularity"><strong>Movie Popularity:</strong> {{ movie.popularity }}</p>
-            <p *ngIf="movie.overview"><strong>Overview:</strong> {{ movie.overview }}</p>
-            <p *ngIf="movie.release_date"><strong>Release date:</strong> {{ movie.release_date }}</p>
-          </div>
-      </div>
-  </div> -->
-
-
 
   <div class="blog">
     <div class="container">
@@ -154,28 +95,8 @@
     </div>
   </div>
 
+    <!-- <input [(ngModel)]="moviePage" type="number">
+    {{ moviesResults.page }}
+    <button (click)=more(moviePage) class="btn btn-success">More! </button>
+    {{ moviesResults.total_pages }} -->
 
-
-<nav aria-label="Page navigation example">
-  <ul class="pagination pagination-circle pg-blue">
-    <li class="page-item disabled"><a class="page-link" mdbWavesEffect>First</a></li>
-    <li class="page-item disabled">
-      <a class="page-link" aria-label="Previous" mdbWavesEffect>
-        <span aria-hidden="true">&laquo;</span>
-        <span class="sr-only">Previous</span>
-      </a>
-    </li>
-    <li class="page-item active"><a class="page-link" mdbWavesEffect>1</a></li>
-    <li class="page-item"><a class="page-link" mdbWavesEffect>2</a></li>
-    <li class="page-item"><a class="page-link" mdbWavesEffect>3</a></li>
-    <li class="page-item"><a class="page-link" mdbWavesEffect>4</a></li>
-    <li class="page-item"><a class="page-link" mdbWavesEffect>5</a></li>
-    <li class="page-item">
-      <a class="page-link" aria-label="Next" mdbWavesEffect>
-        <span aria-hidden="true">&raquo;</span>
-        <span class="sr-only">Next</span>
-      </a>
-    </li>
-    <li class="page-item"><a class="page-link" mdbWavesEffect>Last</a></li>
-  </ul>
-</nav>
