@@ -1,0 +1,50 @@
+
+<div class="container">
+    <div class="d-flex justify-content-center fixed-top navbar-brand " style="margin-top: 2.5px">
+          <input (keyup.enter)="searchMovie(movieName)" type="text" placeholder="What's the word?" [(ngModel)]="movieName">
+          <button (click)="searchMovie(movieName)" class="btn btn-primary"> Find the Movie!</button>
+      </div>
+    
+     
+    <div class="blog">
+      <div class="container">
+        <div *ngIf="moviesResultsState" class="row">
+          <div *ngFor="let movie of moviesResults.results" 
+          class="col-lg-4 col-md-6 col-sm-12">
+            <a routerLink="/movies/{{movie.id}}">
+              <div class="card">
+              <div class="card-img">
+                <img src="https://image.tmdb.org/t/p/w300/{{ movie.poster_path }}" class="img-fluid">
+              </div>
+              <div class="card-body">
+                  <h4 class="card-title">{{ movie.title }}</h4>
+                <p class="card-text d-inline-block text-truncate" style="max-width: 320px;">
+                  {{ movie.overview }}
+                </p>
+              </div>
+              <div class="card-footer">
+                <p class="card-text">{{ movie.release_date }}</p>
+              </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+    </div>
+    
+    <!-- <video *ngIf="movieState" autoplay muted loop id="myVideo">
+      <source src="rain.mp4" type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video> -->
+    
+  
+    
+        <!-- <input [(ngModel)]="moviePage" type="number">
+        {{ moviesResults.page }}
+        <button (click)=more(moviePage) class="btn btn-success">More! </button>
+        {{ moviesResults.total_pages }} -->
+    
+    

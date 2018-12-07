@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
-import { MoviesService } from '../movies.service';
+import { MoviesService } from '../services/movies.service';
+import { ActivatedRoute } from '@angular/router'
 
 @Component({
   selector: 'app-single-movie',
@@ -8,15 +9,33 @@ import { MoviesService } from '../movies.service';
   styleUrls: ['./single-movie.component.css']
 })
 export class SingleMovieComponent implements OnInit {
+  movie: any;
+  similarMovies: any[];
 
-  @Input() movie: MoviesService;
-  iGotService(){
-    this.moviesService.sendMovieId()
+  constructor(
+    private moviesService: MoviesService,
+    private route: ActivatedRoute,
+  ) {
+    this.movie = {};
+    this.similarMovies = [];
   }
-  constructor(private moviesService: MoviesService) { }
 
   ngOnInit() {
-    this.iGotService()
+    const { id } = this.route.snapshot.params;
+    this.getSingleMovie(parseInt(id, 10));
+  }
+
+  getSingleMovie(movieId) {
+    this.moviesService.getOneMovie(movieId)
+    .subscribe((movie) => {
+      this.movie = movie;
+    });
+    this.moviesService.getSimilar(movieId)
+    .subscribe((movies) => {
+      // console.log('SIMILAR______________________', movies)
+      this.similarMovies = movies.results;
+      console.log(this.similarMovies, "************************************************")
+    });
   }
 
 }

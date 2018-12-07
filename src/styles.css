@@ -47,7 +47,10 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-
+a{
+  color: #070606 !important;
+  text-decoration: none !important;
+}
 
 
 
