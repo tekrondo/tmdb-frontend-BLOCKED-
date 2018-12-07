@@ -11,12 +11,18 @@ export class MoviesService {
   // url = 'https://tmdb-api-ang.herokuapp.com';
 
   constructor(private http: HttpClient) { }
-
+  movieId: number
   // Get popular movies on TMDB
   // getPopular(): Observable<any>{
   //   return this.http.get<any>(`${this.url}/movies/popular`);
   // }
+  setMovieId(movieId) {
+    return this.movieId = movieId;
+  }
 
+  sendMovieId(){
+    console.log(this.movieId, 'I Got the sent ID')
+  }
   getPopular(req: number): Observable<any>{
     console.log(req, "from service");
     let backendString = `${this.url}/movies/popular`;

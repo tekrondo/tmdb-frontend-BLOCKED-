@@ -1,7 +1,7 @@
 
 <div class="container">
 <div class="d-flex justify-content-center fixed-top navbar-brand " style="margin-top: 2.5px">
-      <input type="text" placeholder="What's the word?" [(ngModel)]="movieName">
+      <input (keyup.enter)="searchMovie(movieName)" type="text" placeholder="What's the word?" [(ngModel)]="movieName">
       <button (click)="searchMovie(movieName)" class="btn btn-primary"> Find the Movie!</button>
   </div>
 
@@ -41,10 +41,7 @@
 
 
 
-  <div class="container marginTinz" #scrollContainer>
-    <!-- <div>
-        <button class="btn btn-primary float-right" (click)="goBack($event)">Back</button>
-    </div> -->
+  <!-- <div class="container marginTinz" #scrollContainer>
       <div *ngIf="movieState" class="row justify-content">
         <div class="col-md-6 col-sm-12" >
             <img class="img-fluid" src='https://image.tmdb.org/t/p/w780/{{ oneMovie.backdrop_path }}'/>
@@ -66,7 +63,7 @@
           </span>
         </div>
       </div>
-  </div>
+  </div> -->
 
 
 

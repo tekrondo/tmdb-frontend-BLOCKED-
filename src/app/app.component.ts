@@ -50,7 +50,7 @@ export class AppComponent implements OnInit{
       this.moviesResults = movies;
       console.log(movies);
     })
-    // this.movieName = '';
+    this.movieName = ''
   }
 
   more(moviePage: number){
@@ -66,7 +66,7 @@ export class AppComponent implements OnInit{
   //   scrollContainer .scrollable._elementRef.nativeElement.scrollTop = 0
   // }
   singleMovie(movieID) {
-    
+    this.moviesService.setMovieId(movieID)
     this.moviesResults = {};
     this.moviesResultsState = false
     this.movieState = true;
