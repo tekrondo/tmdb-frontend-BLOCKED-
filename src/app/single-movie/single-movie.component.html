@@ -1,0 +1,26 @@
+<div class="container marginTinz" #scrollContainer>
+  <!-- <div>
+      <button class="btn btn-primary float-right" (click)="goBack($event)">Back</button>
+  </div> -->
+    <div *ngIf="movieState" class="row justify-content">
+      <div class="col-md-6 col-sm-12" >
+          <img class="img-fluid" src='https://image.tmdb.org/t/p/w780/{{ oneMovie.backdrop_path }}'/>
+      </div>
+      <div class="col-md-6 col-sm-12 desc">
+        <p><strong>Title: </strong>{{ oneMovie.original_title }}</p>
+        <strong>Genre</strong><span *ngFor="let genre of oneMovie.genres">
+                {{ genre.name }} |
+        </span>
+        <p><strong>Overview: </strong>{{ oneMovie.overview }}</p>
+        <span><strong>Runtime: </strong>{{ oneMovie.runtime }} Minutes</span> | <span><strong>Release date: </strong>{{ oneMovie.release_date | json }}</span>
+        <p><strong>Budget: </strong>{{ oneMovie.budget | currency: 'USD' }}</p>
+        <p><strong>Revenue: </strong>{{ oneMovie.revenue | currency: 'USD' }}</p>
+        <p><strong>Tagline: </strong>{{ oneMovie.tagline }}</p>
+        <p><strong>Movie Popularity: </strong>{{ oneMovie.popularity }}</p>
+        <p><strong>Release date: </strong>{{ oneMovie.release_date }}</p>
+        <strong>Production companies</strong><span *ngFor="let company of oneMovie.production_companies">
+            {{ company.name }} |
+        </span>
+      </div>
+    </div>
+</div>

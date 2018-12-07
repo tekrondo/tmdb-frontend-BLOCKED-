@@ -7,19 +7,19 @@ import { MoviesService } from './movies.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {RouterModule, Routes} from '@angular/router';
+import { SingleMovieComponent } from './single-movie/single-movie.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SingleMovieComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule
-    // NgbPaginationModule
   ],
   providers: [MoviesService],
   bootstrap: [AppComponent]
