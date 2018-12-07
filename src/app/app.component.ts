@@ -11,6 +11,7 @@ import { Location } from '@angular/common';
 export class AppComponent implements OnInit{
   title = 'tmdb-frontend';
   constructor(private moviesService: MoviesService, private location: Location) {}
+
   movieName: string;
   moviePage: number;
   total_pages: number;
@@ -26,6 +27,7 @@ export class AppComponent implements OnInit{
   moviesResultsState = false;
   movieState = false;
   oneMovie = <any>{};
+
 
   getPopularMovies() {
     this.moviesResultsState = true
@@ -51,15 +53,15 @@ export class AppComponent implements OnInit{
     // this.movieName = '';
   }
 
-  // more(moviePage: number){
-  //   console.log(moviePage)
-  //   // this.moviesService.getPopular()
-  //   this.moviesService.getPopular(moviePage)
-  //   .subscribe((movies) =>{
-  //     this.moviesResults = movies;
-  //     console.log(movies, "Moveis on page " + moviePage);
-  //   });
-  // }
+  more(moviePage: number){
+    console.log(moviePage)
+    // this.moviesService.getPopular()
+    this.moviesService.getPopular(moviePage)
+    .subscribe((movies) =>{
+      this.moviesResults = movies;
+      console.log(movies, "Moveis on page " + moviePage);
+    });
+  }
   // onActivate(e, scrollContainer) {
   //   scrollContainer .scrollable._elementRef.nativeElement.scrollTop = 0
   // }

@@ -29,7 +29,8 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
+  /* background-color: black !important; */
 }
 ol, ul {
 	list-style: none;
@@ -79,7 +80,11 @@ table {
 
 /**************************/
 /* .navbar{ background:rgb(0, 0, 0);} */
-.nav-link , .navbar-brand{ color: #1d0808; cursor: pointer;}
+/* .navbar{ 
+  background:rgb(27, 26, 26);
+  background: rgb(110, 62, 20); 52, 20, 110
+} */
+.nav-link , .navbar-brand{ color: #070606; cursor: pointer;}
 .nav-link{ margin-right: 1em !important;}
 .nav-item:hover { background: #f4f4f4; color: #f97300; }
 /* ul>li:hover{ background: #f4f4f4; color: #f97300; } */
