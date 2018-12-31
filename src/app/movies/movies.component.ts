@@ -16,8 +16,11 @@ export class MoviesComponent implements OnInit {
   moviesResultsState = false;
   movieState = false;
   oneMovie = <any>{};
+  noMovies = true;
 
-  constructor(private moviesService: MoviesService) {}
+  constructor(private moviesService: MoviesService) {
+    
+  }
 
   getPopularMovies() {
     this.moviesResultsState = true
@@ -25,18 +28,24 @@ export class MoviesComponent implements OnInit {
     this.moviesService.getPopular(1)
     .subscribe((movies) => {
       // this.newPage = movies.page
+      this.noMovies = false;
       this.moviesResults = movies;
       console.log(movies);
     });
   }
 
   searchMovie(x:string) {
+    this.noMovies = true;
     console.log(x, "THIS IS THE MOVIE")
     this.moviesResults = {};
     this.moviesResultsState = true
     this.movieState = false;
     this.moviesService.findMovie(x)
     .subscribe((movies) =>{
+      if(movies.total_results == 0){
+        console.log('No Movies found')
+      }
+      this.noMovies = false;
       this.moviesResults = movies;
       console.log(movies);
     })

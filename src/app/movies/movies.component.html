@@ -5,20 +5,32 @@
           <button (click)="searchMovie(movieName)" class="btn btn-primary"> Find the Movie!</button>
       </div>
     
-     
+
+
     <div class="blog">
       <div class="container">
         <div *ngIf="moviesResultsState" class="row">
+          
+            <div *ngIf="noMovies">
+                <div class="container">
+                  <div class="row">
+                    <div class="col align-self-center">
+                      <img src="../../assets/lg.azure-round-loader.gif">
+                    </div>
+                  </div>
+                </div>
+              </div> 
+
           <div *ngFor="let movie of moviesResults.results" 
           class="col-lg-4 col-md-6 col-sm-12">
-            <a routerLink="/movies/{{movie.id}}">
+            <a routerLink="/movie/{{movie.id}}">
               <div class="card">
               <div class="card-img">
                 <img src="https://image.tmdb.org/t/p/w300/{{ movie.poster_path }}" class="img-fluid">
               </div>
               <div class="card-body">
                   <h4 class="card-title">{{ movie.title }}</h4>
-                <p class="card-text d-inline-block text-truncate" style="max-width: 320px;">
+                <p class="card-text d-inline-block text-truncate" >
                   {{ movie.overview }}
                 </p>
               </div>

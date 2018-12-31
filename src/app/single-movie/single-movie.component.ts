@@ -23,9 +23,11 @@ export class SingleMovieComponent implements OnInit {
   ngOnInit() {
     const { id } = this.route.snapshot.params;
     this.getSingleMovie(parseInt(id, 10));
+    console.log(id);
   }
 
   getSingleMovie(movieId) {
+    this.movie = '';
     this.moviesService.getOneMovie(movieId)
     .subscribe((movie) => {
       this.movie = movie;
