@@ -46,7 +46,7 @@ var ErrorPageComponent = /** @class */ (function () {
     }
     ErrorPageComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            template: "<h1>THIS PAGE HASN'T BEEN CREATED YET, HOLD ON, YOU MAY HAVE GRAND KIDS BEFORE IT MAY BE ADDED</h1>"
+            template: "<h1 style=\"margin: 25% auto !important\">THIS PAGE HASN'T BEEN CREATED YET, HOLD ON, YOU MAY HAVE GRAND KIDS BEFORE IT MAY BE ADDED</h1>"
         })
     ], ErrorPageComponent);
     return ErrorPageComponent;
@@ -147,7 +147,7 @@ var AppRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".navbar-dark{\n  background-color: black !important;\n  color: aliceblue !important;\n}\n\n.nav-item > a {\n  color: azure !important;\n}\n\n#Home{\n  color: azure !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxtQ0FBbUM7RUFDbkMsNEJBQTRCO0NBQzdCOztBQUVEO0VBQ0Usd0JBQXdCO0NBQ3pCOztBQUVEO0VBQ0Usd0JBQXdCO0NBQ3pCIiwiZmlsZSI6InNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubmF2YmFyLWRhcmt7XG4gIGJhY2tncm91bmQtY29sb3I6IGJsYWNrICFpbXBvcnRhbnQ7XG4gIGNvbG9yOiBhbGljZWJsdWUgIWltcG9ydGFudDtcbn1cblxuLm5hdi1pdGVtID4gYSB7XG4gIGNvbG9yOiBhenVyZSAhaW1wb3J0YW50O1xufVxuXG4jSG9tZXtcbiAgY29sb3I6IGF6dXJlICFpbXBvcnRhbnQ7XG59Il19 */"
+module.exports = ".navbar-dark{\n  background-color: black !important;\n  color: aliceblue !important;\n}\n\n.nav-item > a {\n  color: azure !important;\n}\n\n#Home{\n  color: azure !important;\n}\n\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxtQ0FBbUM7RUFDbkMsNEJBQTRCO0NBQzdCOztBQUVEO0VBQ0Usd0JBQXdCO0NBQ3pCOztBQUVEO0VBQ0Usd0JBQXdCO0NBQ3pCIiwiZmlsZSI6InNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubmF2YmFyLWRhcmt7XG4gIGJhY2tncm91bmQtY29sb3I6IGJsYWNrICFpbXBvcnRhbnQ7XG4gIGNvbG9yOiBhbGljZWJsdWUgIWltcG9ydGFudDtcbn1cblxuLm5hdi1pdGVtID4gYSB7XG4gIGNvbG9yOiBhenVyZSAhaW1wb3J0YW50O1xufVxuXG4jSG9tZXtcbiAgY29sb3I6IGF6dXJlICFpbXBvcnRhbnQ7XG59XG5cbiJdfQ== */"
 
 /***/ }),
 
@@ -257,7 +257,7 @@ var AppModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "[ng\\:cloak],\n[ng-cloak],\n[data-ng-cloak],\n[x-ng-cloak],\n.ng-cloak,\n.x-ng-cloak {\n  display: none !important;\n}\n\n.blog{\n  margin: 4em 0;\n  position: relative; \n }\n\n.blog h1{\n  color:#F97300;\n  margin: 2em; \n }\n\n.blog .card{\n  box-shadow: 0 0 20px #ccc;\n }\n\n.blog .card img{\n  width: 100%;\n  height: 100%;\n }\n\n.blog .card-title{\n  color:#F97300;\n }\n\n.card-title:hover{\n  cursor: pointer;\n }\n\n.blog .card-body{\n  padding: 1em;\n }\n\n.card{\n  margin-bottom: 8%;\n }\n\np .card-text{\n  overflow: hidden;\n }\n\n.CustomCardText{\n  max-width: 100%;\n}\n\n.loader2{\n  margin: 50% auto;\n}\n\n/* .imgHeight{\n   height: 540px !important;\n } */\n\nh4.card-title{\n   font-weight: 300 !important;\n }\n\n.card-img:hover{\n   border: 2px;\n   border-color: #F97300;\n   cursor: pointer;\n }\n\n#loader{\n  margin: 25% auto;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbW92aWVzL21vdmllcy5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBOzs7Ozs7RUFNRSx5QkFBeUI7Q0FDMUI7O0FBRUQ7RUFDRSxjQUFjO0VBQ2QsbUJBQW1CO0VBQ25COztBQUNEO0VBQ0MsY0FBYztFQUNkLFlBQVk7RUFDWjs7QUFDRDtFQUNDLDBCQUEwQjtFQUMxQjs7QUFDRDtFQUNDLFlBQVk7RUFDWixhQUFhO0VBQ2I7O0FBQ0Q7RUFDQyxjQUFjO0VBQ2Q7O0FBRUY7RUFDRSxnQkFBZ0I7RUFDaEI7O0FBQ0Q7RUFDQyxhQUFhO0VBQ2I7O0FBRUQ7RUFDQyxrQkFBa0I7RUFDbEI7O0FBRUQ7RUFDQyxpQkFBaUI7RUFDakI7O0FBRUY7RUFDRSxnQkFBZ0I7Q0FDakI7O0FBRUQ7RUFDRSxpQkFBaUI7Q0FDbEI7O0FBRUE7O0tBRUk7O0FBRUo7R0FDRSw0QkFBNEI7RUFDN0I7O0FBRUQ7R0FDRSxZQUFZO0dBQ1osc0JBQXNCO0dBQ3RCLGdCQUFnQjtFQUNqQjs7QUFFRjtFQUNFLGlCQUFpQjtDQUNsQiIsImZpbGUiOiJzcmMvYXBwL21vdmllcy9tb3ZpZXMuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIltuZ1xcOmNsb2FrXSxcbltuZy1jbG9ha10sXG5bZGF0YS1uZy1jbG9ha10sXG5beC1uZy1jbG9ha10sXG4ubmctY2xvYWssXG4ueC1uZy1jbG9hayB7XG4gIGRpc3BsYXk6IG5vbmUgIWltcG9ydGFudDtcbn1cblxuLmJsb2d7XG4gIG1hcmdpbjogNGVtIDA7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTsgXG4gfVxuIC5ibG9nIGgxe1xuICBjb2xvcjojRjk3MzAwO1xuICBtYXJnaW46IDJlbTsgXG4gfVxuIC5ibG9nIC5jYXJke1xuICBib3gtc2hhZG93OiAwIDAgMjBweCAjY2NjO1xuIH1cbiAuYmxvZyAuY2FyZCBpbWd7XG4gIHdpZHRoOiAxMDAlO1xuICBoZWlnaHQ6IDEwMCU7XG4gfVxuIC5ibG9nIC5jYXJkLXRpdGxle1xuICBjb2xvcjojRjk3MzAwO1xuIH1cblxuLmNhcmQtdGl0bGU6aG92ZXJ7XG4gIGN1cnNvcjogcG9pbnRlcjtcbiB9XG4gLmJsb2cgLmNhcmQtYm9keXtcbiAgcGFkZGluZzogMWVtO1xuIH1cblxuIC5jYXJke1xuICBtYXJnaW4tYm90dG9tOiA4JTtcbiB9XG5cbiBwIC5jYXJkLXRleHR7XG4gIG92ZXJmbG93OiBoaWRkZW47XG4gfVxuXG4uQ3VzdG9tQ2FyZFRleHR7XG4gIG1heC13aWR0aDogMTAwJTtcbn1cblxuLmxvYWRlcjJ7XG4gIG1hcmdpbjogNTAlIGF1dG87XG59XG5cbiAvKiAuaW1nSGVpZ2h0e1xuICAgaGVpZ2h0OiA1NDBweCAhaW1wb3J0YW50O1xuIH0gKi9cblxuIGg0LmNhcmQtdGl0bGV7XG4gICBmb250LXdlaWdodDogMzAwICFpbXBvcnRhbnQ7XG4gfVxuXG4gLmNhcmQtaW1nOmhvdmVye1xuICAgYm9yZGVyOiAycHg7XG4gICBib3JkZXItY29sb3I6ICNGOTczMDA7XG4gICBjdXJzb3I6IHBvaW50ZXI7XG4gfVxuXG4jbG9hZGVye1xuICBtYXJnaW46IDI1JSBhdXRvO1xufVxuIl19 */"
+module.exports = "[ng\\:cloak],\n[ng-cloak],\n[data-ng-cloak],\n[x-ng-cloak],\n.ng-cloak,\n.x-ng-cloak {\n  display: none !important;\n}\n\n.blog{\n  margin: 4em 0;\n  position: relative; \n }\n\n.blog h1{\n  color:#F97300;\n  margin: 2em; \n }\n\n.blog .card{\n  box-shadow: 0 0 20px #ccc;\n }\n\n.blog .card img{\n  width: 100%;\n  height: 100%;\n }\n\n.blog .card-title{\n  color:#F97300;\n }\n\n.card-title:hover{\n  cursor: pointer;\n }\n\n.blog .card-body{\n  padding: 1em;\n }\n\n.card{\n  margin-bottom: 8%;\n }\n\np .card-text{\n  overflow: hidden;\n }\n\n.CustomCardText{\n  max-width: 100%;\n}\n\n.loader2{\n  margin: 50% auto;\n}\n\n/* .imgHeight{\n   height: 540px !important;\n } */\n\nh4.card-title{\n   font-weight: 300 !important;\n }\n\n.card-img:hover{\n   border: 2px;\n   border-color: #F97300;\n   cursor: pointer;\n }\n\n#loader{\n  margin: 25% auto;\n}\n\n#fullImage{\n  background-attachment: fixed;\n  background-size: cover;\n  background-position: center;\n  width: 100% !important;\n}\n\n.top-left{\n  color: aliceblue;  \n  position: absolute;\n  top: 8px;\n  left: 16px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbW92aWVzL21vdmllcy5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBOzs7Ozs7RUFNRSx5QkFBeUI7Q0FDMUI7O0FBRUQ7RUFDRSxjQUFjO0VBQ2QsbUJBQW1CO0VBQ25COztBQUNEO0VBQ0MsY0FBYztFQUNkLFlBQVk7RUFDWjs7QUFDRDtFQUNDLDBCQUEwQjtFQUMxQjs7QUFDRDtFQUNDLFlBQVk7RUFDWixhQUFhO0VBQ2I7O0FBQ0Q7RUFDQyxjQUFjO0VBQ2Q7O0FBRUY7RUFDRSxnQkFBZ0I7RUFDaEI7O0FBQ0Q7RUFDQyxhQUFhO0VBQ2I7O0FBRUQ7RUFDQyxrQkFBa0I7RUFDbEI7O0FBRUQ7RUFDQyxpQkFBaUI7RUFDakI7O0FBRUY7RUFDRSxnQkFBZ0I7Q0FDakI7O0FBRUQ7RUFDRSxpQkFBaUI7Q0FDbEI7O0FBRUE7O0tBRUk7O0FBRUo7R0FDRSw0QkFBNEI7RUFDN0I7O0FBRUQ7R0FDRSxZQUFZO0dBQ1osc0JBQXNCO0dBQ3RCLGdCQUFnQjtFQUNqQjs7QUFFRjtFQUNFLGlCQUFpQjtDQUNsQjs7QUFFRDtFQUNFLDZCQUE2QjtFQUM3Qix1QkFBdUI7RUFDdkIsNEJBQTRCO0VBQzVCLHVCQUF1QjtDQUN4Qjs7QUFFRDtFQUNFLGlCQUFpQjtFQUNqQixtQkFBbUI7RUFDbkIsU0FBUztFQUNULFdBQVc7Q0FDWiIsImZpbGUiOiJzcmMvYXBwL21vdmllcy9tb3ZpZXMuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIltuZ1xcOmNsb2FrXSxcbltuZy1jbG9ha10sXG5bZGF0YS1uZy1jbG9ha10sXG5beC1uZy1jbG9ha10sXG4ubmctY2xvYWssXG4ueC1uZy1jbG9hayB7XG4gIGRpc3BsYXk6IG5vbmUgIWltcG9ydGFudDtcbn1cblxuLmJsb2d7XG4gIG1hcmdpbjogNGVtIDA7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTsgXG4gfVxuIC5ibG9nIGgxe1xuICBjb2xvcjojRjk3MzAwO1xuICBtYXJnaW46IDJlbTsgXG4gfVxuIC5ibG9nIC5jYXJke1xuICBib3gtc2hhZG93OiAwIDAgMjBweCAjY2NjO1xuIH1cbiAuYmxvZyAuY2FyZCBpbWd7XG4gIHdpZHRoOiAxMDAlO1xuICBoZWlnaHQ6IDEwMCU7XG4gfVxuIC5ibG9nIC5jYXJkLXRpdGxle1xuICBjb2xvcjojRjk3MzAwO1xuIH1cblxuLmNhcmQtdGl0bGU6aG92ZXJ7XG4gIGN1cnNvcjogcG9pbnRlcjtcbiB9XG4gLmJsb2cgLmNhcmQtYm9keXtcbiAgcGFkZGluZzogMWVtO1xuIH1cblxuIC5jYXJke1xuICBtYXJnaW4tYm90dG9tOiA4JTtcbiB9XG5cbiBwIC5jYXJkLXRleHR7XG4gIG92ZXJmbG93OiBoaWRkZW47XG4gfVxuXG4uQ3VzdG9tQ2FyZFRleHR7XG4gIG1heC13aWR0aDogMTAwJTtcbn1cblxuLmxvYWRlcjJ7XG4gIG1hcmdpbjogNTAlIGF1dG87XG59XG5cbiAvKiAuaW1nSGVpZ2h0e1xuICAgaGVpZ2h0OiA1NDBweCAhaW1wb3J0YW50O1xuIH0gKi9cblxuIGg0LmNhcmQtdGl0bGV7XG4gICBmb250LXdlaWdodDogMzAwICFpbXBvcnRhbnQ7XG4gfVxuXG4gLmNhcmQtaW1nOmhvdmVye1xuICAgYm9yZGVyOiAycHg7XG4gICBib3JkZXItY29sb3I6ICNGOTczMDA7XG4gICBjdXJzb3I6IHBvaW50ZXI7XG4gfVxuXG4jbG9hZGVye1xuICBtYXJnaW46IDI1JSBhdXRvO1xufVxuXG4jZnVsbEltYWdle1xuICBiYWNrZ3JvdW5kLWF0dGFjaG1lbnQ6IGZpeGVkO1xuICBiYWNrZ3JvdW5kLXNpemU6IGNvdmVyO1xuICBiYWNrZ3JvdW5kLXBvc2l0aW9uOiBjZW50ZXI7XG4gIHdpZHRoOiAxMDAlICFpbXBvcnRhbnQ7XG59XG5cbi50b3AtbGVmdHtcbiAgY29sb3I6IGFsaWNlYmx1ZTsgIFxuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHRvcDogOHB4O1xuICBsZWZ0OiAxNnB4O1xufSJdfQ== */"
 
 /***/ }),
 
@@ -472,7 +472,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n\n<div class=\"container marginTinz\" #scrollContainer *ngIf=\"!noMovies\">\n    <div class=\"row justify-content\">\n      <div class=\"col-md-6 col-sm-12\" >\n          <img class=\"img-fluid\" src='https://image.tmdb.org/t/p/w780/{{ movie?.backdrop_path }}'/>\n      </div>\n      <div class=\"col-md-6 col-sm-12 desc\">\n        <p><strong>Title: </strong>{{ movie?.original_title }}</p>\n        <strong>Genre</strong><span *ngFor=\"let genre of movie?.genres\">\n                {{ genre.name }} |\n        </span>\n        <p><strong>Overview: </strong>{{ movie?.overview }}</p>\n        <span><strong>Runtime: </strong>{{ movie?.runtime }} Minutes</span> | <span><strong>Release date: </strong>{{ movie?.release_date | json }}</span>\n        <p><strong>Budget: </strong>{{ movie?.budget | currency: 'USD' }}</p>\n        <p><strong>Revenue: </strong>{{ movie?.revenue | currency: 'USD' }}</p>\n        <p><strong>Tagline: </strong>{{ movie?.tagline }}</p>\n        <p><strong>movie Popularity: </strong>{{ movie?.popularity }}</p>\n        <p><strong>Release date: </strong>{{ movie?.release_date }}</p>\n        <strong>Production companies</strong><span *ngFor=\"let company of movie?.production_companies\">\n            {{ company.name }} |\n        </span>\n      </div>\n    </div>\n</div>\n\n\n<div *ngIf=\"noMovies\" id=\"loader\" class=\"loader2\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col align-self-center\">\n          <img src=\"../../assets/lg.azure-round-loader.gif\">\n        </div>\n      </div>\n    </div>\n  </div> \n\n\n<div class=\"blog\" *ngIf=\"!noMovies\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div *ngFor=\"let movie of similarMovies\"\n        class=\"col-lg-3 col-md-4 col-sm-12\">\n        <a routerLink=\"/movie/{{movie.id}}\">\n          <div class=\"card\">\n           <div class=\"card-img\">\n            <img src=\"https://image.tmdb.org/t/p/w300/{{ movie.poster_path }}\" class=\"img-fluid\">\n           </div>\n           <div class=\"card-body\">\n              <h4 class=\"card-title\">{{ movie.title }}</h4>\n            <p class=\"card-text d-inline-block text-truncate\" style=\"max-width: 200px;\">\n              {{ movie.overview }}\n            </p>\n           </div>\n           <div class=\"card-footer\">\n            <p class=\"card-text\">{{ movie.release_date }}</p>\n            <i style='content:\"\\e005\";'></i>\n           </div>\n          </div>\n          </a>\n         </div>\n      </div>\n    </div>\n  </div>"
+module.exports = "<div *ngIf=\"!noMovies\">\n  <img id=\"fullImage\" src='https://image.tmdb.org/t/p/w780/{{ movie?.backdrop_path }}' style=\"width: 100% !important; position: relative;\">\n  <div class=\"top-left\">\n    <p><strong>Title: </strong>{{ movie?.original_title }}</p>\n    <strong>Genre</strong><span *ngFor=\"let genre of movie?.genres\">\n            {{ genre.name }} |\n    </span>\n    <p><strong>Overview: </strong>{{ movie?.overview }}</p>\n    <span><strong>Runtime: </strong>{{ movie?.runtime }} Minutes</span> | <span><strong>Release date: </strong>{{ movie?.release_date | json }}</span>\n    <p><strong>Budget: </strong>{{ movie?.budget | currency: 'USD' }}</p>\n    <p><strong>Revenue: </strong>{{ movie?.revenue | currency: 'USD' }}</p>\n    <p><strong>Tagline: </strong>{{ movie?.tagline }}</p>\n    <p><strong>movie Popularity: </strong>{{ movie?.popularity }}</p>\n    <p><strong>Release date: </strong>{{ movie?.release_date }}</p>\n    <strong>Production companies</strong><span *ngFor=\"let company of movie?.production_companies\">\n        {{ company.name }} |\n    </span>\n  </div>\n</div>\n\n\n<!-- \n<div class=\"container marginTinz\" #scrollContainer *ngIf=\"!noMovies\">\n    <div class=\"row justify-content\">\n      <div class=\"col-md-6 col-sm-12\" >\n          <img src='https://image.tmdb.org/t/p/w780/{{ movie?.backdrop_path }}'/>\n      </div>\n      <div class=\"col-md-6 col-sm-12 desc\">\n        <p><strong>Title: </strong>{{ movie?.original_title }}</p>\n        <strong>Genre</strong><span *ngFor=\"let genre of movie?.genres\">\n                {{ genre.name }} |\n        </span>\n        <p><strong>Overview: </strong>{{ movie?.overview }}</p>\n        <span><strong>Runtime: </strong>{{ movie?.runtime }} Minutes</span> | <span><strong>Release date: </strong>{{ movie?.release_date | json }}</span>\n        <p><strong>Budget: </strong>{{ movie?.budget | currency: 'USD' }}</p>\n        <p><strong>Revenue: </strong>{{ movie?.revenue | currency: 'USD' }}</p>\n        <p><strong>Tagline: </strong>{{ movie?.tagline }}</p>\n        <p><strong>movie Popularity: </strong>{{ movie?.popularity }}</p>\n        <p><strong>Release date: </strong>{{ movie?.release_date }}</p>\n        <strong>Production companies</strong><span *ngFor=\"let company of movie?.production_companies\">\n            {{ company.name }} |\n        </span>\n      </div>\n    </div>\n</div> -->\n\n\n<div *ngIf=\"noMovies\" id=\"loader\" class=\"loader2\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col align-self-center\">\n          <img src=\"../../assets/lg.azure-round-loader.gif\">\n        </div>\n      </div>\n    </div>\n  </div> \n\n\n<div class=\"blog\" >\n    <div class=\"container\">\n      <div *ngIf=\"!noMovies\" class=\"row\">\n        <div *ngFor=\"let movie of similarMovies\"\n        class=\"col-lg-3 col-md-4 col-sm-12\">\n        <a routerLink=\"/movie/{{movie.id}}\">\n          <div class=\"card\">\n           <div class=\"card-img\">\n            <img src=\"https://image.tmdb.org/t/p/w300/{{ movie.poster_path }}\" class=\"img-fluid\">\n           </div>\n           <div class=\"card-body\">\n              <h4 class=\"card-title\">{{ movie.title }}</h4>\n            <p class=\"card-text d-inline-block text-truncate\" style=\"max-width: 200px;\">\n              {{ movie.overview }}\n            </p>\n           </div>\n           <div class=\"card-footer\">\n            <p class=\"card-text\">{{ movie.release_date }}</p>\n            <i style='content:\"\\e005\";'></i>\n           </div>\n          </div>\n          </a>\n         </div>\n      </div>\n    </div>\n  </div>"
 
 /***/ }),
 
@@ -487,8 +487,8 @@ module.exports = "\n\n<div class=\"container marginTinz\" #scrollContainer *ngIf
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SingleMovieComponent", function() { return SingleMovieComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _services_movies_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../services/movies.service */ "./src/app/services/movies.service.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _services_movies_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/movies.service */ "./src/app/services/movies.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -501,18 +501,48 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var SingleMovieComponent = /** @class */ (function () {
-    function SingleMovieComponent(moviesService, route) {
+    function SingleMovieComponent(moviesService, route, router) {
+        var _this = this;
         this.moviesService = moviesService;
         this.route = route;
+        this.router = router;
         this.noMovies = true;
         this.movie = {};
         this.similarMovies = [];
+        // This section is to handle the loading of a single movie from the similar movies displayed
+        // The way the component is initially designed, it loads the single movie from the main display
+        // on Init, but does not load the single movie while in the single Movie component display
+        // These event handlers take the routes and parse it to get the movie Id and then call the 
+        // getSingleMovie function.
+        // This is a hack and a more suitable way would be researched to solve for this.
+        router.events.subscribe(function (event) {
+            if (event instanceof _angular_router__WEBPACK_IMPORTED_MODULE_1__["NavigationStart"]) {
+                var routerUrl = event.url;
+                var movieId = parseInt(routerUrl.substr(routerUrl.lastIndexOf('/') + 1), 10);
+                _this.noMovies = true;
+                _this.getSingleMovie(movieId);
+            }
+            if (event instanceof _angular_router__WEBPACK_IMPORTED_MODULE_1__["NavigationEnd"]) {
+                _this.noMovies = false;
+                window.scrollTo(0, 0);
+            }
+            if (event instanceof _angular_router__WEBPACK_IMPORTED_MODULE_1__["NavigationError"]) {
+                console.log(event.error);
+            }
+        });
     }
     SingleMovieComponent.prototype.ngOnInit = function () {
         var id = this.route.snapshot.params.id;
         this.getSingleMovie(parseInt(id, 10));
-        console.log(id);
+        console.log(id, "ngOnInit");
+        //   this.router.events.subscribe((evt) => {
+        //     if (!(evt instanceof NavigationEnd)) {
+        //         return;
+        //     }
+        //     window.scrollTo(0, 0)
+        // });
     };
     SingleMovieComponent.prototype.getSingleMovie = function (movieId) {
         var _this = this;
@@ -535,8 +565,9 @@ var SingleMovieComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./single-movie.component.html */ "./src/app/single-movie/single-movie.component.html"),
             styles: [__webpack_require__(/*! ./single-movie.component.css */ "./src/app/single-movie/single-movie.component.css")]
         }),
-        __metadata("design:paramtypes", [_services_movies_service__WEBPACK_IMPORTED_MODULE_1__["MoviesService"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]])
+        __metadata("design:paramtypes", [_services_movies_service__WEBPACK_IMPORTED_MODULE_2__["MoviesService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
     ], SingleMovieComponent);
     return SingleMovieComponent;
 }());
