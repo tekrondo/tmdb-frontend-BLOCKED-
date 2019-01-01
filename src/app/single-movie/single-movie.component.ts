@@ -31,7 +31,8 @@ export class SingleMovieComponent implements OnInit {
     this.movie = '';
     this.moviesService.getOneMovie(movieId)
     .subscribe((movie) => {
-    this.noMovies = false;
+      this.noMovies = false;
+      
       this.movie = movie;
     });
     this.moviesService.getSimilar(movieId)

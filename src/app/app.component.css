@@ -1,0 +1,12 @@
+.navbar-dark{
+  background-color: black !important;
+  color: aliceblue !important;
+}
+
+.nav-item > a {
+  color: azure !important;
+}
+
+#Home{
+  color: azure !important;
+}
