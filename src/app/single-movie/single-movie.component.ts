@@ -11,6 +11,7 @@ import { ActivatedRoute } from '@angular/router'
 export class SingleMovieComponent implements OnInit {
   movie: any;
   similarMovies: any[];
+  noMovies: boolean = true;
 
   constructor(
     private moviesService: MoviesService,
@@ -30,6 +31,7 @@ export class SingleMovieComponent implements OnInit {
     this.movie = '';
     this.moviesService.getOneMovie(movieId)
     .subscribe((movie) => {
+    this.noMovies = false;
       this.movie = movie;
     });
     this.moviesService.getSimilar(movieId)

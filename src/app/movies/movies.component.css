@@ -32,6 +32,7 @@
  .blog .card-body{
   padding: 1em;
  }
+
  .card{
   margin-bottom: 8%;
  }
@@ -39,6 +40,14 @@
  p .card-text{
   overflow: hidden;
  }
+
+.CustomCardText{
+  max-width: 100%;
+}
+
+.loader2{
+  margin: 50% auto;
+}
 
  /* .imgHeight{
    height: 540px !important;
@@ -54,5 +63,6 @@
    cursor: pointer;
  }
 
-
- 
+#loader{
+  margin: 25% auto;
+}

@@ -10,8 +10,8 @@
     <div class="blog">
       <div class="container">
         <div *ngIf="moviesResultsState" class="row">
-          
-            <div *ngIf="noMovies">
+
+            <div *ngIf="noMovies" id="loader">
                 <div class="container">
                   <div class="row">
                     <div class="col align-self-center">
@@ -30,7 +30,7 @@
               </div>
               <div class="card-body">
                   <h4 class="card-title">{{ movie.title }}</h4>
-                <p class="card-text d-inline-block text-truncate" >
+                <p class="card-text d-inline-block text-truncate CustomCardText">
                   {{ movie.overview }}
                 </p>
               </div>
