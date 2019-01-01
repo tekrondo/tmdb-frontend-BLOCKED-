@@ -66,3 +66,10 @@
 #loader{
   margin: 25% auto;
 }
+
+#fullImage{
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  width: 100% !important;
+}
