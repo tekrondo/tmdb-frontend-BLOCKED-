@@ -23,6 +23,39 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 
 /***/ }),
 
+/***/ "./src/app/404/error-page.component.ts":
+/*!*********************************************!*\
+  !*** ./src/app/404/error-page.component.ts ***!
+  \*********************************************/
+/*! exports provided: ErrorPageComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ErrorPageComponent", function() { return ErrorPageComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var ErrorPageComponent = /** @class */ (function () {
+    function ErrorPageComponent() {
+    }
+    ErrorPageComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            template: "<h1>THIS PAGE HASN'T BEEN CREATED YET, HOLD ON, YOU MAY HAVE GRAND KIDS BEFORE IT MAY BE ADDED</h1>"
+        })
+    ], ErrorPageComponent);
+    return ErrorPageComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/app-routing.module.ts":
 /*!***************************************!*\
   !*** ./src/app/app-routing.module.ts ***!
@@ -39,12 +72,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var _movies_movies_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./movies/movies.component */ "./src/app/movies/movies.component.ts");
 /* harmony import */ var _single_movie_single_movie_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./single-movie/single-movie.component */ "./src/app/single-movie/single-movie.component.ts");
+/* harmony import */ var _404_error_page_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./404/error-page.component */ "./src/app/404/error-page.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -59,17 +94,16 @@ var routes = [
     },
     {
         path: 'movies',
-        children: [
-            {
-                path: '',
-                component: _movies_movies_component__WEBPACK_IMPORTED_MODULE_4__["MoviesComponent"]
-            },
-            {
-                path: ':id',
-                pathMatch: 'full',
-                component: _single_movie_single_movie_component__WEBPACK_IMPORTED_MODULE_5__["SingleMovieComponent"]
-            }
-        ]
+        component: _movies_movies_component__WEBPACK_IMPORTED_MODULE_4__["MoviesComponent"]
+    },
+    {
+        path: 'movie/:id',
+        pathMatch: 'full',
+        component: _single_movie_single_movie_component__WEBPACK_IMPORTED_MODULE_5__["SingleMovieComponent"]
+    },
+    {
+        path: '**',
+        component: _404_error_page_component__WEBPACK_IMPORTED_MODULE_6__["ErrorPageComponent"]
     }
 ];
 var AppRoutingModule = /** @class */ (function () {
@@ -89,11 +123,13 @@ var AppRoutingModule = /** @class */ (function () {
                 _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
                 // components
                 _movies_movies_component__WEBPACK_IMPORTED_MODULE_4__["MoviesComponent"],
-                _single_movie_single_movie_component__WEBPACK_IMPORTED_MODULE_5__["SingleMovieComponent"]
+                _single_movie_single_movie_component__WEBPACK_IMPORTED_MODULE_5__["SingleMovieComponent"],
+                _404_error_page_component__WEBPACK_IMPORTED_MODULE_6__["ErrorPageComponent"]
             ],
             declarations: [
                 _movies_movies_component__WEBPACK_IMPORTED_MODULE_4__["MoviesComponent"],
-                _single_movie_single_movie_component__WEBPACK_IMPORTED_MODULE_5__["SingleMovieComponent"]
+                _single_movie_single_movie_component__WEBPACK_IMPORTED_MODULE_5__["SingleMovieComponent"],
+                _404_error_page_component__WEBPACK_IMPORTED_MODULE_6__["ErrorPageComponent"]
             ]
         })
     ], AppRoutingModule);
@@ -111,7 +147,7 @@ var AppRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuY3NzIn0= */"
+module.exports = ".navbar-dark{\n  background-color: black !important;\n  color: aliceblue !important;\n}\n\n.nav-item > a {\n  color: azure !important;\n}\n\n#Home{\n  color: azure !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxtQ0FBbUM7RUFDbkMsNEJBQTRCO0NBQzdCOztBQUVEO0VBQ0Usd0JBQXdCO0NBQ3pCOztBQUVEO0VBQ0Usd0JBQXdCO0NBQ3pCIiwiZmlsZSI6InNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubmF2YmFyLWRhcmt7XG4gIGJhY2tncm91bmQtY29sb3I6IGJsYWNrICFpbXBvcnRhbnQ7XG4gIGNvbG9yOiBhbGljZWJsdWUgIWltcG9ydGFudDtcbn1cblxuLm5hdi1pdGVtID4gYSB7XG4gIGNvbG9yOiBhenVyZSAhaW1wb3J0YW50O1xufVxuXG4jSG9tZXtcbiAgY29sb3I6IGF6dXJlICFpbXBvcnRhbnQ7XG59Il19 */"
 
 /***/ }),
 
@@ -122,7 +158,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-expand-lg fixed-top\">  \n  <a class=\"navbar-brand\" href=\"/movies\">Home</a>\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">  \n    <span class=\"navbar-toggler-icon\"></span>\n  </button>\n  <div class=\"collapse navbar-collapse \" id=\"navbarSupportedContent\">     \n    <ul class=\"navbar-nav mr-4\">\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" data-value=\"about\" href=\"./sections/about.html\">About</a>        \n      </li>  \n      <li class=\"nav-item\">\n        <a class=\"nav-link \" data-value=\"portfolio\"href=\"#\">Portfolio</a>    \n      </li>\n      <li class=\"nav-item\"> \n        <a class=\"nav-link \" data-value=\"blog\" href=\"./sections/blog.html\">Blog</a>         \n      </li>   \n      <li class=\"nav-item\">  \n        <a class=\"nav-link \" data-value=\"team\" href=\"#\">Team</a>       \n      </li>  \n      <li class=\"nav-item\"> \n        <a class=\"nav-link \" data-value=\"contact\" href=\"#\">Contact</a>       \n      </li> \n    </ul> \n  </div>\n</nav>\n<router-outlet></router-outlet>"
+module.exports = "<nav class=\"navbar navbar-expand-lg navbar-dark fixed-top\">  \n  <a class=\"navbar-brand\" href=\"/movies\" id=\"Home\">Home</a>\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">  \n    <span class=\"navbar-toggler-icon\"></span>\n  </button>\n  <div class=\"collapse navbar-collapse \" id=\"navbarSupportedContent\">     \n    <ul class=\"navbar-nav mr-4\">\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" data-value=\"about\" routerLink=\"/about\">About</a>        \n      </li>  \n      <li class=\"nav-item\">\n        <a class=\"nav-link \" data-value=\"portfolio\" routerLink=\"/portfolio\">Portfolio</a>    \n      </li>\n      <li class=\"nav-item\"> \n        <a class=\"nav-link \" data-value=\"blog\" routerLink=\"/blog\">Blog</a>         \n      </li>   \n      <li class=\"nav-item\">  \n        <a class=\"nav-link \" data-value=\"team\" routerLink=\"/team\">Team</a>       \n      </li>  \n      <li class=\"nav-item\"> \n        <a class=\"nav-link \" data-value=\"contact\" routerLink=\"/contact\">Contact</a>       \n      </li> \n    </ul> \n  </div>\n</nav>\n<router-outlet></router-outlet>"
 
 /***/ }),
 
@@ -146,7 +182,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 var AppComponent = /** @class */ (function () {
     function AppComponent() {
-        this.title = 'tmdb-frontend';
+        this.title = 'Movies Reel';
     }
     AppComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -221,7 +257,7 @@ var AppModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "[ng\\:cloak],\n[ng-cloak],\n[data-ng-cloak],\n[x-ng-cloak],\n.ng-cloak,\n.x-ng-cloak {\n  display: none !important;\n}\n\n.blog{\n  margin: 4em 0;\n  position: relative; \n }\n\n.blog h1{\n  color:#F97300;\n  margin: 2em; \n }\n\n.blog .card{\n  box-shadow: 0 0 20px #ccc;\n }\n\n.blog .card img{\n  width: 100%;\n  height: 100%;\n }\n\n.blog .card-title{\n  color:#F97300;\n }\n\n.card-title:hover{\n  cursor: pointer;\n }\n\n.blog .card-body{\n  padding: 1em;\n }\n\n.card{\n  margin-bottom: 8%;\n }\n\np .card-text{\n  overflow: hidden;\n }\n\n/* .imgHeight{\n   height: 540px !important;\n } */\n\nh4.card-title{\n   font-weight: 300 !important;\n }\n\n.card-img:hover{\n   border: 2px;\n   border-color: #F97300;\n   cursor: pointer;\n }\n\n\n \n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbW92aWVzL21vdmllcy5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBOzs7Ozs7RUFNRSx5QkFBeUI7Q0FDMUI7O0FBRUQ7RUFDRSxjQUFjO0VBQ2QsbUJBQW1CO0VBQ25COztBQUNEO0VBQ0MsY0FBYztFQUNkLFlBQVk7RUFDWjs7QUFDRDtFQUNDLDBCQUEwQjtFQUMxQjs7QUFDRDtFQUNDLFlBQVk7RUFDWixhQUFhO0VBQ2I7O0FBQ0Q7RUFDQyxjQUFjO0VBQ2Q7O0FBRUY7RUFDRSxnQkFBZ0I7RUFDaEI7O0FBQ0Q7RUFDQyxhQUFhO0VBQ2I7O0FBQ0Q7RUFDQyxrQkFBa0I7RUFDbEI7O0FBRUQ7RUFDQyxpQkFBaUI7RUFDakI7O0FBRUQ7O0tBRUk7O0FBRUo7R0FDRSw0QkFBNEI7RUFDN0I7O0FBRUQ7R0FDRSxZQUFZO0dBQ1osc0JBQXNCO0dBQ3RCLGdCQUFnQjtFQUNqQiIsImZpbGUiOiJzcmMvYXBwL21vdmllcy9tb3ZpZXMuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIltuZ1xcOmNsb2FrXSxcbltuZy1jbG9ha10sXG5bZGF0YS1uZy1jbG9ha10sXG5beC1uZy1jbG9ha10sXG4ubmctY2xvYWssXG4ueC1uZy1jbG9hayB7XG4gIGRpc3BsYXk6IG5vbmUgIWltcG9ydGFudDtcbn1cblxuLmJsb2d7XG4gIG1hcmdpbjogNGVtIDA7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTsgXG4gfVxuIC5ibG9nIGgxe1xuICBjb2xvcjojRjk3MzAwO1xuICBtYXJnaW46IDJlbTsgXG4gfVxuIC5ibG9nIC5jYXJke1xuICBib3gtc2hhZG93OiAwIDAgMjBweCAjY2NjO1xuIH1cbiAuYmxvZyAuY2FyZCBpbWd7XG4gIHdpZHRoOiAxMDAlO1xuICBoZWlnaHQ6IDEwMCU7XG4gfVxuIC5ibG9nIC5jYXJkLXRpdGxle1xuICBjb2xvcjojRjk3MzAwO1xuIH1cblxuLmNhcmQtdGl0bGU6aG92ZXJ7XG4gIGN1cnNvcjogcG9pbnRlcjtcbiB9XG4gLmJsb2cgLmNhcmQtYm9keXtcbiAgcGFkZGluZzogMWVtO1xuIH1cbiAuY2FyZHtcbiAgbWFyZ2luLWJvdHRvbTogOCU7XG4gfVxuXG4gcCAuY2FyZC10ZXh0e1xuICBvdmVyZmxvdzogaGlkZGVuO1xuIH1cblxuIC8qIC5pbWdIZWlnaHR7XG4gICBoZWlnaHQ6IDU0MHB4ICFpbXBvcnRhbnQ7XG4gfSAqL1xuXG4gaDQuY2FyZC10aXRsZXtcbiAgIGZvbnQtd2VpZ2h0OiAzMDAgIWltcG9ydGFudDtcbiB9XG5cbiAuY2FyZC1pbWc6aG92ZXJ7XG4gICBib3JkZXI6IDJweDtcbiAgIGJvcmRlci1jb2xvcjogI0Y5NzMwMDtcbiAgIGN1cnNvcjogcG9pbnRlcjtcbiB9XG5cblxuICJdfQ== */"
+module.exports = "[ng\\:cloak],\n[ng-cloak],\n[data-ng-cloak],\n[x-ng-cloak],\n.ng-cloak,\n.x-ng-cloak {\n  display: none !important;\n}\n\n.blog{\n  margin: 4em 0;\n  position: relative; \n }\n\n.blog h1{\n  color:#F97300;\n  margin: 2em; \n }\n\n.blog .card{\n  box-shadow: 0 0 20px #ccc;\n }\n\n.blog .card img{\n  width: 100%;\n  height: 100%;\n }\n\n.blog .card-title{\n  color:#F97300;\n }\n\n.card-title:hover{\n  cursor: pointer;\n }\n\n.blog .card-body{\n  padding: 1em;\n }\n\n.card{\n  margin-bottom: 8%;\n }\n\np .card-text{\n  overflow: hidden;\n }\n\n.CustomCardText{\n  max-width: 100%;\n}\n\n.loader2{\n  margin: 50% auto;\n}\n\n/* .imgHeight{\n   height: 540px !important;\n } */\n\nh4.card-title{\n   font-weight: 300 !important;\n }\n\n.card-img:hover{\n   border: 2px;\n   border-color: #F97300;\n   cursor: pointer;\n }\n\n#loader{\n  margin: 25% auto;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbW92aWVzL21vdmllcy5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBOzs7Ozs7RUFNRSx5QkFBeUI7Q0FDMUI7O0FBRUQ7RUFDRSxjQUFjO0VBQ2QsbUJBQW1CO0VBQ25COztBQUNEO0VBQ0MsY0FBYztFQUNkLFlBQVk7RUFDWjs7QUFDRDtFQUNDLDBCQUEwQjtFQUMxQjs7QUFDRDtFQUNDLFlBQVk7RUFDWixhQUFhO0VBQ2I7O0FBQ0Q7RUFDQyxjQUFjO0VBQ2Q7O0FBRUY7RUFDRSxnQkFBZ0I7RUFDaEI7O0FBQ0Q7RUFDQyxhQUFhO0VBQ2I7O0FBRUQ7RUFDQyxrQkFBa0I7RUFDbEI7O0FBRUQ7RUFDQyxpQkFBaUI7RUFDakI7O0FBRUY7RUFDRSxnQkFBZ0I7Q0FDakI7O0FBRUQ7RUFDRSxpQkFBaUI7Q0FDbEI7O0FBRUE7O0tBRUk7O0FBRUo7R0FDRSw0QkFBNEI7RUFDN0I7O0FBRUQ7R0FDRSxZQUFZO0dBQ1osc0JBQXNCO0dBQ3RCLGdCQUFnQjtFQUNqQjs7QUFFRjtFQUNFLGlCQUFpQjtDQUNsQiIsImZpbGUiOiJzcmMvYXBwL21vdmllcy9tb3ZpZXMuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIltuZ1xcOmNsb2FrXSxcbltuZy1jbG9ha10sXG5bZGF0YS1uZy1jbG9ha10sXG5beC1uZy1jbG9ha10sXG4ubmctY2xvYWssXG4ueC1uZy1jbG9hayB7XG4gIGRpc3BsYXk6IG5vbmUgIWltcG9ydGFudDtcbn1cblxuLmJsb2d7XG4gIG1hcmdpbjogNGVtIDA7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTsgXG4gfVxuIC5ibG9nIGgxe1xuICBjb2xvcjojRjk3MzAwO1xuICBtYXJnaW46IDJlbTsgXG4gfVxuIC5ibG9nIC5jYXJke1xuICBib3gtc2hhZG93OiAwIDAgMjBweCAjY2NjO1xuIH1cbiAuYmxvZyAuY2FyZCBpbWd7XG4gIHdpZHRoOiAxMDAlO1xuICBoZWlnaHQ6IDEwMCU7XG4gfVxuIC5ibG9nIC5jYXJkLXRpdGxle1xuICBjb2xvcjojRjk3MzAwO1xuIH1cblxuLmNhcmQtdGl0bGU6aG92ZXJ7XG4gIGN1cnNvcjogcG9pbnRlcjtcbiB9XG4gLmJsb2cgLmNhcmQtYm9keXtcbiAgcGFkZGluZzogMWVtO1xuIH1cblxuIC5jYXJke1xuICBtYXJnaW4tYm90dG9tOiA4JTtcbiB9XG5cbiBwIC5jYXJkLXRleHR7XG4gIG92ZXJmbG93OiBoaWRkZW47XG4gfVxuXG4uQ3VzdG9tQ2FyZFRleHR7XG4gIG1heC13aWR0aDogMTAwJTtcbn1cblxuLmxvYWRlcjJ7XG4gIG1hcmdpbjogNTAlIGF1dG87XG59XG5cbiAvKiAuaW1nSGVpZ2h0e1xuICAgaGVpZ2h0OiA1NDBweCAhaW1wb3J0YW50O1xuIH0gKi9cblxuIGg0LmNhcmQtdGl0bGV7XG4gICBmb250LXdlaWdodDogMzAwICFpbXBvcnRhbnQ7XG4gfVxuXG4gLmNhcmQtaW1nOmhvdmVye1xuICAgYm9yZGVyOiAycHg7XG4gICBib3JkZXItY29sb3I6ICNGOTczMDA7XG4gICBjdXJzb3I6IHBvaW50ZXI7XG4gfVxuXG4jbG9hZGVye1xuICBtYXJnaW46IDI1JSBhdXRvO1xufVxuIl19 */"
 
 /***/ }),
 
@@ -232,7 +268,7 @@ module.exports = "[ng\\:cloak],\n[ng-cloak],\n[data-ng-cloak],\n[x-ng-cloak],\n.
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"container\">\n    <div class=\"d-flex justify-content-center fixed-top navbar-brand \" style=\"margin-top: 2.5px\">\n          <input (keyup.enter)=\"searchMovie(movieName)\" type=\"text\" placeholder=\"What's the word?\" [(ngModel)]=\"movieName\">\n          <button (click)=\"searchMovie(movieName)\" class=\"btn btn-primary\"> Find the Movie!</button>\n      </div>\n    \n     \n    <div class=\"blog\">\n      <div class=\"container\">\n        <div *ngIf=\"moviesResultsState\" class=\"row\">\n          <div *ngFor=\"let movie of moviesResults.results\" \n          class=\"col-lg-4 col-md-6 col-sm-12\">\n            <a routerLink=\"/movies/{{movie.id}}\">\n              <div class=\"card\">\n              <div class=\"card-img\">\n                <img src=\"https://image.tmdb.org/t/p/w300/{{ movie.poster_path }}\" class=\"img-fluid\">\n              </div>\n              <div class=\"card-body\">\n                  <h4 class=\"card-title\">{{ movie.title }}</h4>\n                <p class=\"card-text d-inline-block text-truncate\" style=\"max-width: 320px;\">\n                  {{ movie.overview }}\n                </p>\n              </div>\n              <div class=\"card-footer\">\n                <p class=\"card-text\">{{ movie.release_date }}</p>\n              </div>\n              </div>\n            </a>\n          </div>\n        </div>\n      </div>\n    </div>\n    \n    \n    </div>\n    \n    <!-- <video *ngIf=\"movieState\" autoplay muted loop id=\"myVideo\">\n      <source src=\"rain.mp4\" type=\"video/mp4\">\n      Your browser does not support HTML5 video.\n    </video> -->\n    \n  \n    \n        <!-- <input [(ngModel)]=\"moviePage\" type=\"number\">\n        {{ moviesResults.page }}\n        <button (click)=more(moviePage) class=\"btn btn-success\">More! </button>\n        {{ moviesResults.total_pages }} -->\n    \n    "
+module.exports = "\n<div class=\"container\">\n    <div class=\"d-flex justify-content-center fixed-top navbar-brand \" style=\"margin-top: 2.5px\">\n          <input (keyup.enter)=\"searchMovie(movieName)\" type=\"text\" placeholder=\"What's the word?\" [(ngModel)]=\"movieName\">\n          <button (click)=\"searchMovie(movieName)\" class=\"btn btn-primary\"> Find the Movie!</button>\n      </div>\n    \n\n\n    <div class=\"blog\">\n      <div class=\"container\">\n        <div *ngIf=\"moviesResultsState\" class=\"row\">\n\n            <div *ngIf=\"noMovies\" id=\"loader\">\n                <div class=\"container\">\n                  <div class=\"row\">\n                    <div class=\"col align-self-center\">\n                      <img src=\"../../assets/lg.azure-round-loader.gif\">\n                    </div>\n                  </div>\n                </div>\n              </div> \n\n          <div *ngFor=\"let movie of moviesResults.results\" \n          class=\"col-lg-4 col-md-6 col-sm-12\">\n            <a routerLink=\"/movie/{{movie.id}}\">\n              <div class=\"card\">\n              <div class=\"card-img\">\n                <img src=\"https://image.tmdb.org/t/p/w300/{{ movie.poster_path }}\" class=\"img-fluid\">\n              </div>\n              <div class=\"card-body\">\n                  <h4 class=\"card-title\">{{ movie.title }}</h4>\n                <p class=\"card-text d-inline-block text-truncate CustomCardText\">\n                  {{ movie.overview }}\n                </p>\n              </div>\n              <div class=\"card-footer\">\n                <p class=\"card-text\">{{ movie.release_date }}</p>\n              </div>\n              </div>\n            </a>\n          </div>\n        </div>\n      </div>\n    </div>\n    \n    \n    </div>\n    \n    <!-- <video *ngIf=\"movieState\" autoplay muted loop id=\"myVideo\">\n      <source src=\"rain.mp4\" type=\"video/mp4\">\n      Your browser does not support HTML5 video.\n    </video> -->\n    \n  \n    \n        <!-- <input [(ngModel)]=\"moviePage\" type=\"number\">\n        {{ moviesResults.page }}\n        <button (click)=more(moviePage) class=\"btn btn-success\">More! </button>\n        {{ moviesResults.total_pages }} -->\n    \n    "
 
 /***/ }),
 
@@ -267,6 +303,7 @@ var MoviesComponent = /** @class */ (function () {
         this.moviesResultsState = false;
         this.movieState = false;
         this.oneMovie = {};
+        this.noMovies = true;
     }
     MoviesComponent.prototype.getPopularMovies = function () {
         var _this = this;
@@ -275,18 +312,24 @@ var MoviesComponent = /** @class */ (function () {
         this.moviesService.getPopular(1)
             .subscribe(function (movies) {
             // this.newPage = movies.page
+            _this.noMovies = false;
             _this.moviesResults = movies;
             console.log(movies);
         });
     };
     MoviesComponent.prototype.searchMovie = function (x) {
         var _this = this;
+        this.noMovies = true;
         console.log(x, "THIS IS THE MOVIE");
         this.moviesResults = {};
         this.moviesResultsState = true;
         this.movieState = false;
         this.moviesService.findMovie(x)
             .subscribe(function (movies) {
+            if (movies.total_results == 0) {
+                console.log('No Movies found');
+            }
+            _this.noMovies = false;
             _this.moviesResults = movies;
             console.log(movies);
         });
@@ -364,10 +407,10 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 var MoviesService = /** @class */ (function () {
+    // url = 'https://tmdb-api-ang.herokuapp.com';
     function MoviesService(http) {
         this.http = http;
-        // url = 'http://localhost:5555';
-        this.url = 'https://tmdb-api-ang.herokuapp.com';
+        this.url = 'http://localhost:5555';
     }
     // Get popular movies on TMDB
     // getPopular(): Observable<any>{
@@ -429,7 +472,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container marginTinz\" #scrollContainer>\n    <div class=\"row justify-content\">\n      <div class=\"col-md-6 col-sm-12\" >\n          <img class=\"img-fluid\" src='https://image.tmdb.org/t/p/w780/{{ movie?.backdrop_path }}'/>\n      </div>\n      <div class=\"col-md-6 col-sm-12 desc\">\n        <p><strong>Title: </strong>{{ movie?.original_title }}</p>\n        <strong>Genre</strong><span *ngFor=\"let genre of movie?.genres\">\n                {{ genre.name }} |\n        </span>\n        <p><strong>Overview: </strong>{{ movie?.overview }}</p>\n        <span><strong>Runtime: </strong>{{ movie?.runtime }} Minutes</span> | <span><strong>Release date: </strong>{{ movie?.release_date | json }}</span>\n        <p><strong>Budget: </strong>{{ movie?.budget | currency: 'USD' }}</p>\n        <p><strong>Revenue: </strong>{{ movie?.revenue | currency: 'USD' }}</p>\n        <p><strong>Tagline: </strong>{{ movie?.tagline }}</p>\n        <p><strong>movie Popularity: </strong>{{ movie?.popularity }}</p>\n        <p><strong>Release date: </strong>{{ movie?.release_date }}</p>\n        <strong>Production companies</strong><span *ngFor=\"let company of movie?.production_companies\">\n            {{ company.name }} |\n        </span>\n      </div>\n    </div>\n</div>\n\n<div class=\"blog\">\n    <div class=\"container\">\n      <div *ngIf=\"movieState\" class=\"row\">\n        <div *ngFor=\"let movie of similarMovies\"\n        class=\"col-lg-3 col-md-4 col-sm-12\">\n        <a routerLink=\"/movies/{{movie.id}}\">\n          <div class=\"card\">\n           <div class=\"card-img\">\n            <img src=\"https://image.tmdb.org/t/p/w300/{{ movie.poster_path }}\" class=\"img-fluid\">\n           </div>\n           <div class=\"card-body\">\n              <h4 class=\"card-title\">{{ movie.title }}</h4>\n            <p class=\"card-text d-inline-block text-truncate\" style=\"max-width: 200px;\">\n              {{ movie.overview }}\n            </p>\n           </div>\n           <div class=\"card-footer\">\n            <p class=\"card-text\">{{ movie.release_date }}</p>\n            <i style='content:\"\\e005\";'></i>\n           </div>\n          </div>\n          </a>\n         </div>\n      </div>\n    </div>\n  </div>"
+module.exports = "\n\n<div class=\"container marginTinz\" #scrollContainer *ngIf=\"!noMovies\">\n    <div class=\"row justify-content\">\n      <div class=\"col-md-6 col-sm-12\" >\n          <img class=\"img-fluid\" src='https://image.tmdb.org/t/p/w780/{{ movie?.backdrop_path }}'/>\n      </div>\n      <div class=\"col-md-6 col-sm-12 desc\">\n        <p><strong>Title: </strong>{{ movie?.original_title }}</p>\n        <strong>Genre</strong><span *ngFor=\"let genre of movie?.genres\">\n                {{ genre.name }} |\n        </span>\n        <p><strong>Overview: </strong>{{ movie?.overview }}</p>\n        <span><strong>Runtime: </strong>{{ movie?.runtime }} Minutes</span> | <span><strong>Release date: </strong>{{ movie?.release_date | json }}</span>\n        <p><strong>Budget: </strong>{{ movie?.budget | currency: 'USD' }}</p>\n        <p><strong>Revenue: </strong>{{ movie?.revenue | currency: 'USD' }}</p>\n        <p><strong>Tagline: </strong>{{ movie?.tagline }}</p>\n        <p><strong>movie Popularity: </strong>{{ movie?.popularity }}</p>\n        <p><strong>Release date: </strong>{{ movie?.release_date }}</p>\n        <strong>Production companies</strong><span *ngFor=\"let company of movie?.production_companies\">\n            {{ company.name }} |\n        </span>\n      </div>\n    </div>\n</div>\n\n\n<div *ngIf=\"noMovies\" id=\"loader\" class=\"loader2\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col align-self-center\">\n          <img src=\"../../assets/lg.azure-round-loader.gif\">\n        </div>\n      </div>\n    </div>\n  </div> \n\n\n<div class=\"blog\" *ngIf=\"!noMovies\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div *ngFor=\"let movie of similarMovies\"\n        class=\"col-lg-3 col-md-4 col-sm-12\">\n        <a routerLink=\"/movie/{{movie.id}}\">\n          <div class=\"card\">\n           <div class=\"card-img\">\n            <img src=\"https://image.tmdb.org/t/p/w300/{{ movie.poster_path }}\" class=\"img-fluid\">\n           </div>\n           <div class=\"card-body\">\n              <h4 class=\"card-title\">{{ movie.title }}</h4>\n            <p class=\"card-text d-inline-block text-truncate\" style=\"max-width: 200px;\">\n              {{ movie.overview }}\n            </p>\n           </div>\n           <div class=\"card-footer\">\n            <p class=\"card-text\">{{ movie.release_date }}</p>\n            <i style='content:\"\\e005\";'></i>\n           </div>\n          </div>\n          </a>\n         </div>\n      </div>\n    </div>\n  </div>"
 
 /***/ }),
 
@@ -462,17 +505,21 @@ var SingleMovieComponent = /** @class */ (function () {
     function SingleMovieComponent(moviesService, route) {
         this.moviesService = moviesService;
         this.route = route;
+        this.noMovies = true;
         this.movie = {};
         this.similarMovies = [];
     }
     SingleMovieComponent.prototype.ngOnInit = function () {
         var id = this.route.snapshot.params.id;
         this.getSingleMovie(parseInt(id, 10));
+        console.log(id);
     };
     SingleMovieComponent.prototype.getSingleMovie = function (movieId) {
         var _this = this;
+        this.movie = '';
         this.moviesService.getOneMovie(movieId)
             .subscribe(function (movie) {
+            _this.noMovies = false;
             _this.movie = movie;
         });
         this.moviesService.getSimilar(movieId)
