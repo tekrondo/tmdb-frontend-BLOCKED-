@@ -34,24 +34,6 @@ export class MoviesComponent implements OnInit {
     });
   }
 
-  searchMovie(x:string) {
-    this.noMovies = true;
-    console.log(x, "THIS IS THE MOVIE")
-    this.moviesResults = {};
-    this.moviesResultsState = true
-    this.movieState = false;
-    this.moviesService.findMovie(x)
-    .subscribe((movies) =>{
-      if(movies.total_results == 0){
-        console.log('No Movies found')
-      }
-      this.noMovies = false;
-      this.moviesResults = movies;
-      console.log(movies);
-    })
-    this.movieName = ''
-  }
-
   more(moviePage: number){
     console.log(moviePage)
     // this.moviesService.getPopular()
@@ -61,27 +43,6 @@ export class MoviesComponent implements OnInit {
       console.log(movies, "Moveis on page " + moviePage);
     });
   }
-  // onActivate(e, scrollContainer) {
-  //   scrollContainer .scrollable._elementRef.nativeElement.scrollTop = 0
-  // }
-
-  // singleMovie(movieID) {
-  //   this.moviesService.setMovieId(movieID)
-  //   this.moviesResults = {};
-  //   this.moviesResultsState = false
-  //   this.movieState = true;
-  //   this.moviesService.getOneMovie(movieID)
-  //   .subscribe((movie) => {
-  //     this.moviesResults = {};
-  //     this.oneMovie = movie;
-  //     console.log(movie);
-  //   });
-  //   this.moviesService.getSimilar(movieID)
-  //   .subscribe((movies) => {
-  //     this.similarMovieResults = movies
-  //     console.log(movies, "Similar movies");
-  //   });
-  // }
 
   ngOnInit() {
     this.getPopularMovies();

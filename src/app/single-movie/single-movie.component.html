@@ -1,84 +1,64 @@
-<div *ngIf="!noMovies">
-  <img id="fullImage" src='https://image.tmdb.org/t/p/w780/{{ movie?.backdrop_path }}' style="width: 100% !important; position: relative;">
-  <div class="top-left">
-    <p><strong>Title: </strong>{{ movie?.original_title }}</p>
-    <strong>Genre</strong><span *ngFor="let genre of movie?.genres">
-            {{ genre.name }} |
-    </span>
-    <p><strong>Overview: </strong>{{ movie?.overview }}</p>
-    <span><strong>Runtime: </strong>{{ movie?.runtime }} Minutes</span> | <span><strong>Release date: </strong>{{ movie?.release_date | json }}</span>
-    <p><strong>Budget: </strong>{{ movie?.budget | currency: 'USD' }}</p>
-    <p><strong>Revenue: </strong>{{ movie?.revenue | currency: 'USD' }}</p>
-    <p><strong>Tagline: </strong>{{ movie?.tagline }}</p>
-    <p><strong>movie Popularity: </strong>{{ movie?.popularity }}</p>
-    <p><strong>Release date: </strong>{{ movie?.release_date }}</p>
-    <strong>Production companies</strong><span *ngFor="let company of movie?.production_companies">
-        {{ company.name }} |
-    </span>
+<div class="row">
+  <div class="col-md-12" [ngStyle]="setMyStyles()">
+      <div *ngIf="!noMovies" >
+          <div class="top-left" *ngIf="!noMovies">
+            <p><strong>Title: </strong>{{ movie?.original_title }}</p>
+            <strong>Genre</strong><span *ngFor="let genre of movie?.genres">
+                    {{ genre.name }} |
+            </span>
+            <p><strong>Overview: </strong>{{ movie?.overview }}</p>
+            <span><strong>Runtime: </strong>{{ movie?.runtime }} Minutes</span> | <span><strong>Release date: </strong>{{ movie?.release_date | json }}</span>
+            <p><strong>Budget: </strong>{{ movie?.budget | currency: 'USD' }}</p>
+            <p><strong>Revenue: </strong>{{ movie?.revenue | currency: 'USD' }}</p>
+            <p><strong>Tagline: </strong>{{ movie?.tagline }}</p>
+            <p><strong>movie Popularity: </strong>{{ movie?.popularity }}</p>
+            <p><strong>Release date: </strong>{{ movie?.release_date }}</p>
+            <strong>Production companies</strong><span *ngFor="let company of movie?.production_companies">
+                {{ company.name }} |
+            </span>
+          </div>
+        </div>
+  </div>
+
+  <div class="col-md-12">
+      <div class="blog" *ngIf="!noMovies">
+          <div class="container-fluid">
+            <div class="row">
+              <div *ngFor="let movie of similarMovies"
+              class="col-lg-3 col-md-4 col-sm-12">
+              <a routerLink="/movie/{{movie.id}}">
+                <div class="card">
+                 <div class="card-img">
+                  <img src="https://image.tmdb.org/t/p/w300/{{ movie.poster_path }}" class="img-fluid">
+                 </div>
+                 <div class="card-body">
+                    <h4 class="card-title">{{ movie.title }}</h4>
+                  <p class="card-text d-inline-block text-truncate" style="max-width: 200px;">
+                    {{ movie.overview }}
+                  </p>
+                 </div>
+                 <div class="card-footer">
+                  <p class="card-text">{{ movie.release_date }}</p>
+                  <i style='content:"\e005";'></i>
+                 </div>
+                </div>
+                </a>
+               </div>
+            </div>
+          </div>
+        </div>
   </div>
 </div>
 
-
-<!-- 
-<div class="container marginTinz" #scrollContainer *ngIf="!noMovies">
-    <div class="row justify-content">
-      <div class="col-md-6 col-sm-12" >
-          <img src='https://image.tmdb.org/t/p/w780/{{ movie?.backdrop_path }}'/>
-      </div>
-      <div class="col-md-6 col-sm-12 desc">
-        <p><strong>Title: </strong>{{ movie?.original_title }}</p>
-        <strong>Genre</strong><span *ngFor="let genre of movie?.genres">
-                {{ genre.name }} |
-        </span>
-        <p><strong>Overview: </strong>{{ movie?.overview }}</p>
-        <span><strong>Runtime: </strong>{{ movie?.runtime }} Minutes</span> | <span><strong>Release date: </strong>{{ movie?.release_date | json }}</span>
-        <p><strong>Budget: </strong>{{ movie?.budget | currency: 'USD' }}</p>
-        <p><strong>Revenue: </strong>{{ movie?.revenue | currency: 'USD' }}</p>
-        <p><strong>Tagline: </strong>{{ movie?.tagline }}</p>
-        <p><strong>movie Popularity: </strong>{{ movie?.popularity }}</p>
-        <p><strong>Release date: </strong>{{ movie?.release_date }}</p>
-        <strong>Production companies</strong><span *ngFor="let company of movie?.production_companies">
-            {{ company.name }} |
-        </span>
-      </div>
-    </div>
-</div> -->
-
-
+<!--Spinner-->
 <div *ngIf="noMovies" id="loader" class="loader2">
-    <div class="container">
-      <div class="row">
-        <div class="col align-self-center">
-          <img src="../../assets/lg.azure-round-loader.gif">
-        </div>
-      </div>
-    </div>
-  </div> 
-
-
-<div class="blog" >
-    <div class="container">
-      <div *ngIf="!noMovies" class="row">
-        <div *ngFor="let movie of similarMovies"
-        class="col-lg-3 col-md-4 col-sm-12">
-        <a routerLink="/movie/{{movie.id}}">
-          <div class="card">
-           <div class="card-img">
-            <img src="https://image.tmdb.org/t/p/w300/{{ movie.poster_path }}" class="img-fluid">
-           </div>
-           <div class="card-body">
-              <h4 class="card-title">{{ movie.title }}</h4>
-            <p class="card-text d-inline-block text-truncate" style="max-width: 200px;">
-              {{ movie.overview }}
-            </p>
-           </div>
-           <div class="card-footer">
-            <p class="card-text">{{ movie.release_date }}</p>
-            <i style='content:"\e005";'></i>
-           </div>
-          </div>
-          </a>
-         </div>
+  <div class="container">
+    <div class="row">
+      <div class="col align-self-center">
+        <img src="../../assets/lg.azure-round-loader.gif">
       </div>
     </div>
   </div>
+</div> 
+
+

@@ -1,35 +1,28 @@
 
-<div class="container">
-    <div class="d-flex justify-content-center fixed-top navbar-brand " style="margin-top: 2.5px">
-          <input (keyup.enter)="searchMovie(movieName)" type="text" placeholder="What's the word?" [(ngModel)]="movieName">
-          <button (click)="searchMovie(movieName)" class="btn btn-primary"> Find the Movie!</button>
-      </div>
-    
+<div class="container-fluid">
 
+  <div class="blog">
+    <div class="container-fluid">
+      <div *ngIf="moviesResultsState" class="row">
 
-    <div class="blog">
-      <div class="container">
-        <div *ngIf="moviesResultsState" class="row">
+        <div *ngIf="noMovies" id="loader" >
+          <div class="container">
+            <div class="row">
+              <div class="col align-self-center">
+                <img src="../../assets/lg.azure-round-loader.gif">
+              </div>
+            </div>
+          </div>
+        </div> 
 
-            <div *ngIf="noMovies" id="loader">
-                <div class="container">
-                  <div class="row">
-                    <div class="col align-self-center">
-                      <img src="../../assets/lg.azure-round-loader.gif">
-                    </div>
-                  </div>
-                </div>
-              </div> 
-
-          <div *ngFor="let movie of moviesResults.results" 
-          class="col-lg-4 col-md-6 col-sm-12">
-            <a routerLink="/movie/{{movie.id}}">
-              <div class="card">
+        <div *ngFor="let movie of moviesResults.results" class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+          <a routerLink="/movie/{{movie.id}}">
+            <div class="card">
               <div class="card-img">
                 <img src="https://image.tmdb.org/t/p/w300/{{ movie.poster_path }}" class="img-fluid">
               </div>
               <div class="card-body">
-                  <h4 class="card-title">{{ movie.title }}</h4>
+                <h4 class="card-title">{{ movie.title }}</h4>
                 <p class="card-text d-inline-block text-truncate CustomCardText">
                   {{ movie.overview }}
                 </p>
@@ -37,26 +30,11 @@
               <div class="card-footer">
                 <p class="card-text">{{ movie.release_date }}</p>
               </div>
-              </div>
-            </a>
-          </div>
+            </div>
+          </a>
         </div>
       </div>
     </div>
-    
-    
-    </div>
-    
-    <!-- <video *ngIf="movieState" autoplay muted loop id="myVideo">
-      <source src="rain.mp4" type="video/mp4">
-      Your browser does not support HTML5 video.
-    </video> -->
-    
-  
-    
-        <!-- <input [(ngModel)]="moviePage" type="number">
-        {{ moviesResults.page }}
-        <button (click)=more(moviePage) class="btn btn-success">More! </button>
-        {{ moviesResults.total_pages }} -->
-    
-    
+  </div>
+
+</div>

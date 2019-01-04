@@ -32,15 +32,14 @@ export class SingleMovieComponent implements OnInit {
     // This is a hack and a more suitable way would be researched to solve for this.
 
     router.events.subscribe((event: Event) => {
+      this.noMovies = true;
       if (event instanceof NavigationStart) {
         var routerUrl = event.url
         var movieId:number  = parseInt(routerUrl.substr(routerUrl.lastIndexOf('/') + 1), 10);
-        this.noMovies = true;
         this.getSingleMovie(movieId)
       }
 
       if (event instanceof NavigationEnd) {
-        this.noMovies = false;
         window.scrollTo(0, 0)
       }
 
@@ -65,18 +64,34 @@ export class SingleMovieComponent implements OnInit {
 
   getSingleMovie(movieId: number) {
     this.movie = '';
+    this.noMovies = true;
     this.moviesService.getOneMovie(movieId)
     .subscribe((movie) => {
-      this.noMovies = false;
-      
+      movie.backdrop_path = `https://image.tmdb.org/t/p/original${ movie.backdrop_path }`
       this.movie = movie;
     });
     this.moviesService.getSimilar(movieId)
     .subscribe((movies) => {
       // console.log('SIMILAR______________________', movies)
       this.similarMovies = movies.results;
+      this.noMovies = false;
       console.log(this.similarMovies, "************************************************")
     });
+  }
+
+  setMyStyles() {
+    let styles = {
+      'width': '100%',
+      'height': '100%',
+      'background-image': `url(${this.movie.backdrop_path})`,
+      'background-attachment': 'fixed',
+      'background-position': 'center',
+      'margin-top': '56px',
+      'margin-bottom': '5px',
+
+    };
+
+    return styles;
   }
 
 }
