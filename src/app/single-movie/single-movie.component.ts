@@ -32,7 +32,6 @@ export class SingleMovieComponent implements OnInit {
     // This is a hack and a more suitable way would be researched to solve for this.
 
     router.events.subscribe((event: Event) => {
-      this.noMovies = true;
       if (event instanceof NavigationStart) {
         var routerUrl = event.url
         var movieId:number  = parseInt(routerUrl.substr(routerUrl.lastIndexOf('/') + 1), 10);
@@ -40,12 +39,17 @@ export class SingleMovieComponent implements OnInit {
       }
 
       if (event instanceof NavigationEnd) {
-        window.scrollTo(0, 0)
+        window.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: 'smooth'
+        })
       }
 
       if (event instanceof NavigationError) {
           console.log(event.error);
       }
+      this.noMovies = true;
   });
   }
 

@@ -3,10 +3,6 @@
     <div class="col-md-12">
       <nav class="navbar navbar-expand-lg navbar-dark fixed-top">  
         <a class="navbar-brand" href="/movies" id="Home">Home</a>
-        <div class="d-flex justify-content-center fixed-top navbar-brand " style="margin-top: 2.5px">
-          <input (keyup.enter)="searchMovie(movieName)" type="text" placeholder="What's the word?" [(ngModel)]="movieName">
-          <button (click)="searchMovie(movieName)" class="btn btn-primary"> Find the Movie!</button>
-        </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">  
           <span class="navbar-toggler-icon"></span>
         </button>
