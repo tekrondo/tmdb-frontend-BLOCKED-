@@ -1,7 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Router, Event, NavigationStart, NavigationEnd, NavigationError } from '@angular/router';
 
-
 import { MoviesService } from '../services/movies.service';
 import { ActivatedRoute } from '@angular/router'
 
@@ -56,14 +55,9 @@ export class SingleMovieComponent implements OnInit {
   ngOnInit() {
     const { id } = this.route.snapshot.params;
     this.getSingleMovie(parseInt(id, 10));
+    
     console.log(id, "ngOnInit");
 
-  //   this.router.events.subscribe((evt) => {
-  //     if (!(evt instanceof NavigationEnd)) {
-  //         return;
-  //     }
-  //     window.scrollTo(0, 0)
-  // });
   }
 
   getSingleMovie(movieId: number) {
@@ -92,7 +86,6 @@ export class SingleMovieComponent implements OnInit {
       'background-position': 'center',
       'margin-top': '56px',
       'margin-bottom': '5px',
-
     };
 
     return styles;
