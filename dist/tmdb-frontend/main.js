@@ -480,10 +480,10 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 var MoviesService = /** @class */ (function () {
-    // url = 'https://tmdb-api-ang.herokuapp.com';
     function MoviesService(http) {
         this.http = http;
-        this.url = 'http://localhost:5555';
+        // url = 'http://localhost:5555';
+        this.url = 'https://tmdb-api-ang.herokuapp.com';
     }
     // Get popular movies on TMDB
     // getPopular(): Observable<any>{
@@ -613,12 +613,6 @@ var SingleMovieComponent = /** @class */ (function () {
         var id = this.route.snapshot.params.id;
         this.getSingleMovie(parseInt(id, 10));
         console.log(id, "ngOnInit");
-        //   this.router.events.subscribe((evt) => {
-        //     if (!(evt instanceof NavigationEnd)) {
-        //         return;
-        //     }
-        //     window.scrollTo(0, 0)
-        // });
     };
     SingleMovieComponent.prototype.getSingleMovie = function (movieId) {
         var _this = this;
