@@ -7,43 +7,43 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class MoviesService {
-  // url = 'http://localhost:5555';
-  url = 'https://tmdb-api-ang.herokuapp.com';
+  url = 'http://localhost:5555';
+  // url = 'https://tmdb-api-ang.herokuapp.com';
 
   constructor(private http: HttpClient) { }
-  movieId: number
+  movieId: number;
   // Get popular movies on TMDB
   // getPopular(): Observable<any>{
   //   return this.http.get<any>(`${this.url}/movies/popular`);
   // }
- 
 
-  sendMovieId(){
-    console.log('I Got the sent ID')
+
+  sendMovieId() {
+    console.log('I Got the sent ID');
   }
-  
-  getPopular(req: number): Observable<any>{
-    console.log(req, "from service");
-    let backendString = `${this.url}/movies/popular`;
-    if(!req && typeof(req) == undefined){
+
+  getPopular(req: number): Observable<any> {
+    console.log(req, 'from service');
+    const backendString = `${this.url}/movies/popular`;
+    if (!req && typeof(req) === undefined) {
       return this.http.get<any>(backendString);
-    }else{
-      return this.http.get<any>(backendString + '?page=' + req)
+    } else {
+      return this.http.get<any>( backendString + '?page=' + req );
     }
   }
 
   // Search for movies based on search term
   findMovie(movieName: string): Observable<any> {
-    return this.http.get<any>(`${this.url}/movies/search/`+ movieName);
+    return this.http.get<any>(`${this.url}/movies/search/` + movieName);
   }
 
   // Get full details of one movie
-  getOneMovie(movieId): Observable<any>{
-    return this.http.get<any>(`${this.url}/movies/movie/` + movieId)
+  getOneMovie(movieId): Observable<any> {
+    return this.http.get<any>( `${this.url}/movies/movie/` + movieId );
   }
 
   // Get similar movies based on the id of another movie.
   getSimilar(movieId): Observable<any> {
-    return this.http.get<any>(`${this.url}/movies/movie/similar/` + movieId)
+    return this.http.get<any>(`${this.url}/movies/movie/similar/` + movieId);
   }
 }
